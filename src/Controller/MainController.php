@@ -9,9 +9,6 @@
 
 namespace Controller;
 
-use Model\Item;
-use Model\ItemManager;
-
 /**
  * Class ItemController
  *
@@ -26,6 +23,6 @@ class MainController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('user/mainpage.html.twig');
+        return $this->twig->render('main/index.html.twig');
     }
 }
