@@ -16,16 +16,16 @@ use Model\PlacesManager;
  * Class ItemController
  *
  */
-class MainController extends AbstractController
+class PlacesController extends AbstractController
 {
     /**
      * Display item listing
-     *
      * @return string
      */
     public function index()
     {
-        $this->places();
-        return $this->twig->render('main/index.html.twig');
+        $placesManager = new PlacesManager();
+        $places = $placesManager->selectAll();
+        return $this->twig->render('main/places.html.twig', ['places'=>$places]);
     }
 }
