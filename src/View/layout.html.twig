@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{% block title %}{% endblock %}</title>
-
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="assets/css/styles.css">
     {% block stylesheet %}{% endblock %}
+
     <link rel="icon" href="/assets/images/favicon.png">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
-{% block content %}{% endblock %}
+{% block body %}{% endblock %}
 </body>
 
 {% block javascript %}{% endblock %}
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </html>

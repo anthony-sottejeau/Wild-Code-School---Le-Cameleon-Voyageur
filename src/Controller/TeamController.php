@@ -12,6 +12,6 @@ namespace Controller;
 class TeamController extends AbstractController
 {
     public function show() {
-        return $this->twig->render('Team/team.html.twig', ['team' => 'team']);
+        return $this->twig->render('main/index.html.twig', ['team' => 'team']);
     }
 }
