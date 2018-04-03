@@ -9,9 +9,6 @@
 
 namespace Controller;
 
-use Model\Place;
-use Model\PlacesManager;
-
 /**
  * Class ItemController
  *
@@ -25,7 +22,6 @@ class MainController extends AbstractController
      */
     public function index()
     {
-        $this->places();
         return $this->twig->render('main/index.html.twig');
     }
 }
