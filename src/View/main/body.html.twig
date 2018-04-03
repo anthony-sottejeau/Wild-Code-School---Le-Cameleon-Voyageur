@@ -1,6 +1,8 @@
 {% extends 'layout.html.twig' %}
 {% block body %}
     {% include 'include/navbar.html.twig' %}
+    <div class="container">
     {% block content %}{%  endblock %}
+    </div>
     {% include 'include/footer.html.twig' %}
 {% endblock %}
