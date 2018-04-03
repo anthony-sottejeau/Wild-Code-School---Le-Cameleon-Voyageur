@@ -58,16 +58,16 @@ h2:before{
 }
 
 h3{
-    color:#728e20;
+    color:#000;
     font-size: 2em;
     font-family: plaza;
 }
 
-.section-white{
+section :nth-child(odd){
     background-color:#EEE;
 }
 
-.section-black{
+section :nth-child(even){
     background-color:#333;
     color:#EEEEEE;
 }
