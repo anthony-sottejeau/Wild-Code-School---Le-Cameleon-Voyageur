@@ -1,0 +1,59 @@
+
+#team {
+    background-color: rgba(177,209,55,0.9);
+    padding-bottom: 20px;
+}
+
+#team .img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#team img {
+    border: 2px solid white;
+    box-shadow: 0 0 0 13px rgba(6, 6, 6, 0.85);
+}
+
+#team .description-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#team .bookmark-prev {
+    transform: rotate(90deg);
+    position: relative;
+    top:2px;
+}
+
+#team .bookmark-next {
+    transform: rotate(-90deg);
+    position: relative;
+    top:7px;
+}
+
+#team img {
+    width: 100%;
+    max-width: 200px;
+}
+
+#team h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+#team h3 {
+    font-size: 1.8em;
+}
+
+#team p {
+    font-size:1.4em;
+    font-family: 'Mina', sans-serif;
+    color:white;
+}

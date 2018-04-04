@@ -2,7 +2,7 @@
 {% block body %}
     {% include 'include/navbar.html.twig' %}
     {% block content %}
-    {% include 'include/team.html.twig' %}
+        {% include 'include/team.html.twig' with {'TeamMate':'TeamMate'} %}
     {%  endblock %}
     {% include 'include/footer.html.twig' %}
 {% endblock %}
