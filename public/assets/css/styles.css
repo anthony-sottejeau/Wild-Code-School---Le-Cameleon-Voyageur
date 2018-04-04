@@ -1,22 +1,73 @@
-/* Navbar */
-.navbar-fixed-top {
-    background-color: #728e20;
+@font-face {
+    font-family: plaza;
+    src: url(../fonts/29849_PlazaITC-Normal.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
 
+body{
+    background-color:#EEE;
+    font-size :1.5em;
+    font-family : 'Open Sans', sans-serif;
 }
-.navbar-default .navbar-nav>li>a {
-    font-size: 1.5em;
-    color: white;
-    height: 70px;
-    vertical-align: center;
+
+h1{
+    color:#728e20;
+    font-size: 4em;
+    font-family: plaza;
 }
-.navbar>.container .navbar-brand{
-    color: white;
+
+h1:after, h1:before{
+    content: "\e044";
+    font-family: 'Glyphicons Halflings';
+    display: inline-block;
+    padding-top:5px;
+}
+
+h1:after{
+    transform: rotate(-90deg);
+    padding-right: 18px;
+}
+
+h1:before{
+    transform: rotate(90deg);
+    padding-left: 13px;
+}
+
+h2{
+    color:#728e20;
+    font-size: 3em;
+    font-family: plaza;
+}
+
+h2:after, h2:before{
+    content: "\e044";
+    font-family: 'Glyphicons Halflings';
+    display: inline-block;
+    padding-top:5px;
+}
+
+h2:after{
+    transform: rotate(-90deg);
+    padding-right: 18px;
+}
+
+h2:before{
+    transform: rotate(90deg);
+    padding-left: 13px;
+}
+
+h3{
+    color:#000;
     font-size: 2em;
-    margin-top: 3vh;
-
+    font-family: plaza;
 }
 
-.logo{
-    width: 100px;
-    height: auto;
+section :nth-child(odd){
+    background-color:#EEE;
+}
+
+section :nth-child(even){
+    background-color:#333;
+    color:#EEEEEE;
 }
