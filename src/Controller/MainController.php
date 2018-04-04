@@ -11,11 +11,6 @@ namespace Controller;
 
 use Model\TeamMateManager;
 
-
-/**
- * Class ItemController
- *
- */
 class MainController extends AbstractController
 {
 

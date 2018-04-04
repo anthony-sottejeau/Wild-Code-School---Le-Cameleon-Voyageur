@@ -1,59 +1,118 @@
+@font-face {
+    font-family: plaza;
+    src: url(../fonts/29849_PlazaITC-Normal.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    background-color:#EEE;
+    font-size :1.5em;
+    font-family : 'Open Sans', sans-serif;
+}
+
+h1{
+    color:#728e20;
+    font-size: 4em;
+    font-family: plaza;
+}
+
+h1:after, h1:before{
+    content: "\e044";
+    font-family: 'Glyphicons Halflings';
+    display: inline-block;
+    padding-top:5px;
+}
+
+h1:after{
+    transform: rotate(-90deg);
+    padding-right: 18px;
+}
+
+h1:before{
+    transform: rotate(90deg);
+    padding-left: 13px;
+}
+
+h2{
+    color:#728e20;
+    font-size: 3em;
+    font-family: plaza;
+}
+
+h2:after, h2:before{
+    content: "\e044";
+    font-family: 'Glyphicons Halflings';
+    display: inline-block;
+    padding-top:5px;
+}
+
+h2:after{
+    transform: rotate(-90deg);
+    padding-right: 18px;
+}
+
+h2:before{
+    transform: rotate(90deg);
+    padding-left: 13px;
+}
+
+h3 {
+    color:#000;
+    font-size: 2em;
+    font-family: plaza;
+}
+
+section:nth-child(odd){
+    background-color:#EEE;
+}
+
+section:nth-child(even){
+    background-color:#333;
+    color:#EEEEEE;
+}
+
+/* team */
 
 #team {
-    background-color: rgba(177,209,55,0.9);
     padding-bottom: 20px;
 }
 
 #team .img-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    height: inherit;
 }
 
 #team img {
     border: 2px solid white;
     box-shadow: 0 0 0 13px rgba(6, 6, 6, 0.85);
-}
-
-#team .description-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#team .bookmark-prev {
-    transform: rotate(90deg);
-    position: relative;
-    top:2px;
-}
-
-#team .bookmark-next {
-    transform: rotate(-90deg);
-    position: relative;
-    top:7px;
-}
-
-#team img {
     width: 100%;
     max-width: 200px;
+    margin: 15px;
 }
 
-#team h2 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 45px;
-    font-weight: 700;
-    padding-bottom: 15px;
-    text-align: center;
+#team .description-container:first-of-type h3 {
+    text-align:right;
 }
 
-#team h3 {
-    font-size: 1.8em;
+#team .description-container:nth-of-type(2) h3 {
+    text-align:left;
 }
 
-#team p {
-    font-size:1.4em;
-    font-family: 'Mina', sans-serif;
-    color:white;
+#team .description-container:first-of-type p {
+    text-align:right;
+}
+
+#team .description-container:nth-of-type(2) p {
+    text-align:left;
+}
+
+#team center-team {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
