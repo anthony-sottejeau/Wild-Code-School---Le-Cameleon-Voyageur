@@ -8,10 +8,10 @@
  */
 
 namespace Controller;
+use Model\ConceptManager;
 
 /**
  * Class ItemController
- *
  */
 class MainController extends AbstractController
 {
@@ -23,6 +23,14 @@ class MainController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('main/index.html.twig');
+        $concept = $this->getConcept();
+        return $this->twig->render('main/index.html.twig', ['concept'=>$concept]);
+    }
+
+    public function getConcept() : array //Concue par damien aidé de anthony
+    {
+        $conceptManager = new ConceptManager();
+        $concept = $conceptManager->selectAll();
+        return $concept;
     }
 }
