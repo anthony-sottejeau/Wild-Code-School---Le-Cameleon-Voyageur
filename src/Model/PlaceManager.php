@@ -12,7 +12,7 @@ namespace Model;
 /**
  *
  */
-class PlacesManager extends AbstractManager
+class PlaceManager extends AbstractManager
 {
     const TABLE = 'place';
 

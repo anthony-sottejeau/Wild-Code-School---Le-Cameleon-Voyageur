@@ -10,13 +10,13 @@
 namespace Controller;
 
 use Model\Place;
-use Model\PlacesManager;
+use Model\PlaceManager;
 
 /**
  * Class ItemController
  *
  */
-class PlacesController extends AbstractController
+class PlaceController extends AbstractController
 {
     /**
      * Display item listing
@@ -24,8 +24,8 @@ class PlacesController extends AbstractController
      */
     public function index()
     {
-        $placesManager = new PlacesManager();
+        $placesManager = new PlaceManager();
         $places = $placesManager->selectAll();
-        return $this->twig->render('main/places.html.twig', ['places'=>$places]);
+        return $this->twig->render('places/list.html.twig', ['places'=>$places]);
     }
 }

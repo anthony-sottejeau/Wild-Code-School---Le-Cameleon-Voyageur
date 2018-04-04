@@ -13,7 +13,7 @@ $routes = [
     'Main' => [ // Controller
         ['index', '/', 'GET'], // action, url, method    ],
     ],
-    'Places' => [
+    'Place' => [
         ['index', '/lieux','GET'],
     ]
 ];

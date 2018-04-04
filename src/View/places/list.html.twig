@@ -16,21 +16,7 @@
                 {% if place.adress_day or place.adress_evening %}
                     <div class="day">
                         <h3>
-                        {% if place.day == 1 %}
-                            Lundi
-                        {%  elseif place.day == 2 %}
-                            Mardi
-                        {%  elseif place.day == 3 %}
-                            Mercredi
-                        {%  elseif place.day == 4 %}
-                            Jeudi
-                        {%  elseif place.day == 5 %}
-                            Vendredi
-                        {%  elseif place.day == 6 %}
-                            Samedi
-                        {%  else %}
-                            Dimanche
-                        {% endif %}
+                            {{ place.day }}
                         </h3>
                     </div>
                     <div><span class="hour">12h-14h :</span> {{ place.adress_day }}</div>
