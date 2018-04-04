@@ -24,8 +24,8 @@ class PlaceController extends AbstractController
      */
     public function index()
     {
-        $placesManager = new PlaceManager();
-        $places = $placesManager->selectAll();
-        return $this->twig->render('places/list.html.twig', ['places'=>$places]);
+        $placeManager = new PlaceManager();
+        $places = $placeManager->selectAll();
+        return $this->twig->render('place/list.html.twig', ['place'=>$places]);
     }
 }
