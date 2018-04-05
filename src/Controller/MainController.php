@@ -23,6 +23,14 @@ class MainController extends AbstractController
      */
     public function index()
     {
+        return $this->getAlert();
         return $this->twig->render('main/index.html.twig');
     }
+
+    public function getAlert()
+   {
+       $alertManager = new AlertManager();
+       $alert = $alertManager->selectAll();
+       return $alert;
+     }
 }
