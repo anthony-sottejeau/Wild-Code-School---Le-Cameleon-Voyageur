@@ -8,6 +8,7 @@
  */
 
 namespace Controller;
+use Model\AlertManager;
 
 /**
  * Class ItemController
@@ -22,14 +23,17 @@ class MainController extends AbstractController
      */
     public function index()
     {
-        return $this->getAlert();
-        return $this->twig->render('main/index.html.twig');
+        $alert = $this->getAlert();
+        return $this->twig->render('main/index.html.twig', ['alert' => $alert]);
     }
 
+    /**
+     * @return mixed
+     */
     public function getAlert()
    {
        $alertManager = new AlertManager();
-       $alert = $alertManager->selectAll();
+       $alert = $alertManager->selectOneById(1);
        return $alert;
-     }
+   }
 }
