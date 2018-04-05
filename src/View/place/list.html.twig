@@ -1,0 +1,31 @@
+{% extends 'main/body.html.twig' %}
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" media="screen" href="assets/css/places.css">
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2>Lieux</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            {% for place in places %}
+                {% if place.adress_day or place.adress_evening %}
+                    <div class="day">
+                        <h3>
+                            {{ place.day }}
+                        </h3>
+                    </div>
+                    <div><span class="hour">12h-14h :</span> {{ place.adress_day }}</div>
+                    <div><span class="hour">19h-21h :</span> {{ place.adress_evening }}</div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <img src="assets/images/image.jpg" class="img-responsive">
+        </div>
+    </div>
+{% endblock %}

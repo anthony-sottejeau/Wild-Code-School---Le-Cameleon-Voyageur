@@ -15,7 +15,6 @@ namespace Controller;
  */
 class MainController extends AbstractController
 {
-
     /**
      * Display item listing
      *
