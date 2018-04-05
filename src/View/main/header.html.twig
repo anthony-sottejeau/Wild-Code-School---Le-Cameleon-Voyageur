@@ -1,5 +1,6 @@
 <header>
     <div class="container-fluid">
+    
         <img src="{{ header[1].picture }}" alt="{{ header[1].alt }}" class="img-responsive visible-xs">
 
         <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
@@ -12,13 +13,10 @@
 
             <div class="carousel-inner" role="listbox">
                 {% for image in header %}
-
                     <div class="item {% if loop.index == 1 %} active {% endif %} ">
                         <img src="{{ image.picture }}" alt="{{ image.alt }}">
-
                     </div>
                 {% endfor %}
-
             </div>
 
             <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -29,6 +27,8 @@
                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
+            
         </div>
+        
     </div>
 </header>
