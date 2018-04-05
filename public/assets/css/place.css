@@ -1,3 +1,7 @@
 .hour{
     font-weight: bold;
 }
+
+#map{
+    height: 80vh;
+}
