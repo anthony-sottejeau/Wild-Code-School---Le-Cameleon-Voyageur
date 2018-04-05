@@ -23,6 +23,7 @@ class MainController extends AbstractController
      */
     public function index()
     {
+        $header = $this->getHeader();
         return $this->twig->render('main/index.html.twig', ['header'=> $header]);
     }
 
