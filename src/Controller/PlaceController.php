@@ -9,24 +9,23 @@
 
 namespace Controller;
 
-use Model\SliderManager;
+use Model\Place;
+use Model\PlaceManager;
 
 /**
  * Class ItemController
  *
  */
-class MainController extends AbstractController
+class PlaceController extends AbstractController
 {
     /**
      * Display item listing
-     *
      * @return string
      */
     public function index()
     {
-        $sliderManager = new SliderManager();
-        $slider = $sliderManager->selectAll();
-        return $this->twig->render('main/index.html.twig', ['slider'=> $slider]);
+        $placeManager = new PlaceManager();
+        $places = $placeManager->selectAll();
+        return $this->twig->render('place/list.html.twig', ['place'=>$places]);
     }
-
 }
