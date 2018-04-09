@@ -24,6 +24,7 @@ class MainController extends AbstractController
      */
     public function index()
     {
+
         $sliderManager = new SliderManager();
         $slider = $sliderManager->selectAll();
         return $this->twig->render('main/index.html.twig', ['slider'=> $slider]);
