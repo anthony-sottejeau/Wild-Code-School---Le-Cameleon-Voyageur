@@ -74,11 +74,11 @@ section:nth-child(even){
 
 /* team */
 
-#team {
+.team {
     padding-bottom: 20px;
 }
 
-#team .img-container {
+.team .img-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -86,7 +86,7 @@ section:nth-child(even){
     height: inherit;
 }
 
-#team img {
+.team img {
     border: 2px solid white;
     box-shadow: 0 0 0 13px rgba(6, 6, 6, 0.85);
     width: 100%;
@@ -94,23 +94,23 @@ section:nth-child(even){
     margin: 15px;
 }
 
-#team .description-container:first-of-type h3 {
+.team .description-container:first-of-type h3 {
     text-align:right;
 }
 
-#team .description-container:nth-of-type(2) h3 {
+.team .description-container:nth-of-type(2) h3 {
     text-align:left;
 }
 
-#team .description-container:first-of-type p {
+.team .description-container:first-of-type p {
     text-align:right;
 }
 
-#team .description-container:nth-of-type(2) p {
+.team .description-container:nth-of-type(2) p {
     text-align:left;
 }
 
-#team center-team {
+.team center-team {
     display: flex;
     flex-direction: row;
     justify-content: center;

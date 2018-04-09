@@ -8,14 +8,12 @@
 
 namespace Model;
 
-
-class TeamMate
+class Team
 {
     private $id;
     private $name;
     private $description;
     private $picture;
-    private $alt;
 
     /**
      * @return mixed
@@ -79,21 +77,5 @@ class TeamMate
     public function setPicture($picture): void
     {
         $this->picture = $picture;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAlt()
-    {
-        return $this->alt;
-    }
-
-    /**
-     * @param mixed $alt
-     */
-    public function setAlt($alt): void
-    {
-        $this->alt = $alt;
     }
 }

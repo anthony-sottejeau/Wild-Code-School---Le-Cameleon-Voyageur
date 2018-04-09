@@ -8,9 +8,9 @@
 
 namespace Model;
 
-class TeamMateManager extends AbstractManager
+class TeamManager extends AbstractManager
 {
-    const TABLE = 'teamMate';
+    const TABLE = 'team';
 
     public function __construct()
     {

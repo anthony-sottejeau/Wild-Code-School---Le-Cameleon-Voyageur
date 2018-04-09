@@ -9,7 +9,7 @@
 
 namespace Controller;
 
-use Model\TeamMateManager;
+use Model\TeamManager;
 
 class MainController extends AbstractController
 {
@@ -22,15 +22,8 @@ class MainController extends AbstractController
 
     public function index()
     {
-        $teamMates = $this->getTeam();
-        return $this->twig->render('main/index.html.twig', ['TeamMate'=>$teamMates]);
-    }
-
-    public function getTeam()
-    {
-        $teamManager = new TeamMateManager();
-        $teamMates = $teamManager->selectAll();
-
-        return $teamMates;
+        $teamManager = new TeamManager();
+        $team = $teamManager->selectAll();
+        return $this->twig->render('main/index.html.twig', ['Team'=>$team]);
     }
 }
