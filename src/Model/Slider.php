@@ -7,7 +7,7 @@
  */
 namespace Model;
 
-class Header
+class Slider
 {
     private $id;
     private $picture;

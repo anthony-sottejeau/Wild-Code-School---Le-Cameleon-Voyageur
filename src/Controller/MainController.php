@@ -9,6 +9,8 @@
 
 namespace Controller;
 
+use Model\SliderManager;
+
 /**
  * Class ItemController
  *
@@ -23,13 +25,9 @@ class MainController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('main/index.html.twig', ['header'=> $header]);
+        $sliderManager = new SliderManager();
+        $slider = $sliderManager->selectAll();
+        return $this->twig->render('main/index.html.twig', ['slider'=> $slider]);
     }
 
-    public function getHeader()
-    {
-        $headerManager = new HeaderManager();
-        $header = $headerManager->selectAll();
-        return $header;
-    }
 }

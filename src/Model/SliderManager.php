@@ -7,9 +7,9 @@
  */
 namespace Model;
 
-class HeaderManager extends AbstractManager
+class SliderManager extends AbstractManager
 {
-    const TABLE = "header";
+    const TABLE = "slider";
 
     public function __construct()
     {
