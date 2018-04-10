@@ -9,6 +9,7 @@ body{
     background-color:#EEE;
     font-size :1.5em;
     font-family : 'Open Sans', sans-serif;
+    padding-top:70px;
 }
 
 h1{
@@ -44,7 +45,7 @@ h2:after, h2:before{
     content: "\e044";
     font-family: 'Glyphicons Halflings';
     display: inline-block;
-    padding-top:5px;
+    padding-top:3px;
 }
 
 h2:after{
