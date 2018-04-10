@@ -8,6 +8,7 @@
  */
 
 namespace Controller;
+use Model\AlertManager;
 
 use Model\SliderManager;
 
@@ -24,10 +25,11 @@ class MainController extends AbstractController
      */
     public function index()
     {
-
+        $alertManager = new AlertManager();
+        $alert = $alertManager->selectFirst();
         $sliderManager = new SliderManager();
-        $slider = $sliderManager->selectAll();
-        return $this->twig->render('main/index.html.twig', ['slider'=> $slider]);
+        $slider = $sliderManager->selectAll();     
+        return $this->twig->render('main/index.html.twig', ['alert' => $alert,'slider'=> $slider ]);
     }
 
 }
