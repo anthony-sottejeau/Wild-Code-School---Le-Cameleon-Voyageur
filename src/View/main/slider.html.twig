@@ -1,5 +1,5 @@
 <header class="container-fluid">
-    <img src="{{ slider[1].picture }}" alt="{{ slider[1].alt }}" class="img-responsive visible-xs">
+    {% if slider[0].picture is defined %} <img src="{{ slider[0].picture }}" alt="{{ slider[0].alt }}" class="img-responsive visible-xs"> {%  endif %}
 
     <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
 
