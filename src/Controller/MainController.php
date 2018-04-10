@@ -8,6 +8,7 @@
  */
 
 namespace Controller;
+use Model\GalleryManager;
 
 /**
  * Class ItemController
@@ -22,6 +23,8 @@ class MainController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('main/index.html.twig');
+        $galleryManager = new GalleryManager();
+        $gallery = $galleryManager->selectAll();
+        return $this->twig->render('main/index.html.twig', ['gallery'=>$gallery]);
     }
 }
