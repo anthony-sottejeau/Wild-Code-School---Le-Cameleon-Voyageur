@@ -8,7 +8,7 @@
  */
 
 namespace Controller;
-use Model\ConceptManager;
+use Model\CompanyManager;
 
 /**
  * Class ItemController
@@ -23,14 +23,14 @@ class MainController extends AbstractController
      */
     public function index()
     {
-        $concept = $this->getConcept();
-        return $this->twig->render('main/index.html.twig', ['concept'=>$concept]);
+        $company = $this->getCompany();
+        return $this->twig->render('main/index.html.twig', ['company'=>$company]);
     }
 
-    public function getConcept() : array //Concue par damien aidé de anthony
+    public function getCompany() : array //Concue par damien aidé de anthony
     {
-        $conceptManager = new ConceptManager();
-        $concept = $conceptManager->selectAll();
-        return $concept;
+        $companyManager = new CompanyManager();
+        $company = $companyManager->selectAll();
+        return $company;
     }
 }
