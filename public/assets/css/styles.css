@@ -65,24 +65,13 @@ h3{
 
 /* Gallery */
 
-.gallery .container-img {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    /*padding: 10px 5px;*/
-    height: 300px;
-}
-
 .gallery .container-img img {
     width: 100%;
     height: 260px;
     max-width: 100%;
-    margin: 0;
 }
 
 .gallery .modal img {
-    /* new custom width */
     width: 100%;
     height: 100%;
 }
@@ -96,4 +85,14 @@ h3{
     color: white;
     width: 250px;
     height: 40px;
+}
+
+a.thumbnail:hover {
+    border: 1px #728e20 solid;
+}
+
+@media screen and (max-width: 500px) {
+    .gallery .container-img img {
+        max-height: 120px;
+    }
 }

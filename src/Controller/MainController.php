@@ -8,7 +8,10 @@
  */
 
 namespace Controller;
+
 use Model\GalleryManager;
+use Model\AlertManager;
+use Model\SliderManager;
 
 /**
  * Class ItemController
@@ -25,6 +28,12 @@ class MainController extends AbstractController
     {
         $galleryManager = new GalleryManager();
         $gallery = $galleryManager->selectAll();
-        return $this->twig->render('main/index.html.twig', ['gallery'=>$gallery]);
+        $alertManager = new AlertManager();
+        $alert = $alertManager->selectFirst();
+        $sliderManager = new SliderManager();
+        $slider = $sliderManager->selectAll();
+        return $this->twig->render('main/index.html.twig', ['alert' => $alert,
+                                                                  'slider'=> $slider,
+                                                                  'gallery'=>$gallery]);
     }
 }
