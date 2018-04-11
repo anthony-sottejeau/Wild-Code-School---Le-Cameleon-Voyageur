@@ -87,8 +87,6 @@ section:nth-child(even){
 }
 
 .team img {
-    border: 2px solid white;
-    box-shadow: 0 0 0 6px rgba(6, 6, 6, 0.85);
     width: 100%;
     max-width: 180px;
 }
@@ -103,4 +101,14 @@ section:nth-child(even){
 
 .team h3{
     color:#e72;
+}
+
+@media screen and (max-width: 766px) {
+    .team h3 {
+        text-align: center;
+    }
+
+    .team p {
+        text-align: center;
+    }
 }

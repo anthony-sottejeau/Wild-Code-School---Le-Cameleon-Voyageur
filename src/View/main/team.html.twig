@@ -6,7 +6,7 @@
         <div class="row">
             {% for teamMate in team %}
                 <div class="col-xs-12 col-sm-3 img-container {{ loop.index is not odd ? 'col-sm-push-9' }}">
-                    <img class="img-circle" src="{{ teamMate.picture }}" alt="{{ teamMate.name }}">
+                    <img src="{{ teamMate.picture }}" alt="{{ teamMate.name }}">
                 </div>
                 <div class="col-xs-12 col-sm-9 description-container {{ loop.index is not odd ? 'col-sm-pull-3' }}">
                     <div>
