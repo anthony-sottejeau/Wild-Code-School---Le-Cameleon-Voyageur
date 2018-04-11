@@ -91,7 +91,7 @@
       <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="27" />
     <option name="width" value="1460" />
     <option name="height" value="1053" />
@@ -193,16 +193,15 @@
       <workItem from="1523371250813" duration="1515000" />
       <workItem from="1523373339079" duration="1368000" />
       <workItem from="1523434851305" duration="32000" />
-      <workItem from="1523434900741" duration="612000" />
+      <workItem from="1523434900741" duration="1204000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6771000" />
+    <option name="totallyTimeSpent" value="7363000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1460" height="1053" extended-state="1" />
-    <editor active="true" />
+    <frame x="0" y="27" width="1460" height="1053" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16265912" />
       <window_info anchor="bottom" id="TODO" order="6" />
