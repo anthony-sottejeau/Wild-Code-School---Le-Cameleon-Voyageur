@@ -2,6 +2,7 @@
 {% extends 'layout.html.twig' %}
 {% block body %}
     {% include 'include/navbar.html.twig' %}
+    {% include 'main/spotlight.html.twig' with {'spotlight':'spotlight'} %}{#ds#}
     {% block content %}{%  endblock %}
     {% include 'include/footer.html.twig' %}
 {% endblock %}
