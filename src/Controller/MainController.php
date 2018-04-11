@@ -12,10 +12,8 @@ use Model\AlertManager;
 
 use Model\SliderManager;
 
-/**
- * Class ItemController
- *
- */
+use Model\TeamManager;
+
 class MainController extends AbstractController
 {
     /**
@@ -23,13 +21,16 @@ class MainController extends AbstractController
      *
      * @return string
      */
+
     public function index()
     {
+        $teamManager = new TeamManager();
+        $team = $teamManager->selectAll();
         $alertManager = new AlertManager();
         $alert = $alertManager->selectFirst();
         $sliderManager = new SliderManager();
         $slider = $sliderManager->selectAll();     
-        return $this->twig->render('main/index.html.twig', ['alert' => $alert,'slider'=> $slider ]);
+        return $this->twig->render('main/index.html.twig', ['alert' => $alert,'slider'=> $slider,'team'=>$team]);
     }
 
 
