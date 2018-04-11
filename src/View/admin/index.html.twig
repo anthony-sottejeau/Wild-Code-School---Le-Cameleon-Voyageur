@@ -1,0 +1,56 @@
+{% extends 'admin/body.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 hidden-xs text-center admin-menu">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#entreprise">Entreprise</a></li>
+                    <li><a data-toggle="tab" href="#header">Présentation</a></li>
+                    <li><a data-toggle="tab" href="#gallery">Gallerie</a></li>
+                    <li><a data-toggle="tab" href="#lieux">Où nous trouver</a></li>
+                    <li><a data-toggle="tab" href="#menus">Menus</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12 visible-xs text-center admin-menu">
+                <div class="btn-group">
+                    <ul class="nav nav-tabs">
+                        <li class="active dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Catégories
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a data-toggle="tab" href="#entreprise">Entreprise</a></li>
+                                <li><a data-toggle="tab" href="#header">Présentation</a></li>
+                                <li><a data-toggle="tab" href="#gallery">Gallerie</a></li>
+                                <li><a data-toggle="tab" href="#lieux">Où nous trouver?</a></li>
+                                <li><a data-toggle="tab" href="#menus">Menus</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="tab-content">
+                <div id="entreprise" class="tab-pane fade in active section-admin">
+                    {# Formulaire Entreprise (concept, reseaux sociaux, telephone) #}
+                </div>
+                <div id="header" class="tab-pane section-admin">
+                    {# Formulaire header (slider, alerte, en lumiere) #}
+                </div>
+                <div id="gallery" class="tab-pane section-admin">
+                    {# Formulaire menus (galerie) #}
+                </div>
+                <div id="lieux" class="tab-pane section-admin">
+                    {# Formulaire Lieux #}
+                    {% include 'admin/place.html.twig' %}
+                </div>
+                <div id="menus" class="tab-pane section-admin">
+                    {# Formulaire menus #}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -54,6 +54,14 @@ body{
     padding-top:70px;
 }
 
+a{
+    color:#E72;
+}
+
+a:hover{
+    color:#333;
+}
+
 h1{
     color:#728e20;
     font-size: 4em;
@@ -113,6 +121,16 @@ section:nth-child(odd){
 section:nth-child(even){
     background-color:#333;
     color:#EEEEEE;
+}
+
+.admin-menu .nav-tabs>li.active>a{
+    background-color:#EEE;
+    color:#333;
+}
+
+.section-admin{
+    padding-top: 10px;
+    Padding-bottom: 10px;
 }
 
 /* team */
