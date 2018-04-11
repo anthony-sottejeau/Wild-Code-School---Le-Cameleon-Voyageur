@@ -23,14 +23,8 @@ class MainController extends AbstractController
      */
     public function index()
     {
-        $company = $this->getCompany();
-        return $this->twig->render('main/index.html.twig', ['company'=>$company]);
-    }
-
-    public function getCompany() : array //Concue par damien aidé de anthony
-    {
         $companyManager = new CompanyManager();
         $company = $companyManager->selectAll();
-        return $company;
+        return $this->twig->render('main/index.html.twig', ['company'=>$company]);
     }
 }
