@@ -5,6 +5,11 @@
     font-style: normal;
 }
 
+.title_spotlight{text-align: center; margin-top: 25px;}
+/*.splt_manage{display: flex; margin-top: 25px;}*/
+.img_spotlight{margin-right: 15px}
+.text{margin-top: auto; margin-bottom: auto;}
+
 body{
     background-color:#EEE;
     font-size :1.5em;
@@ -63,7 +68,7 @@ h3{
     font-family: plaza;
 }
 
-section :nth-child(odd){
+/*section :nth-child(odd){
     background-color:#EEE;
 }
 

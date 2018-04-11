@@ -1,8 +1,15 @@
 <section id="spotlight">
     <div class="container">
+    <h2 class="title_spotlight">En Lumiere</h2>
         <div class="row">
-            <h2 class="title_spotlight">En Lumiere</h2>
-            <p class="text_spotlight">{{spotlight[0].text}}</p>
+            <div class="splt_manage">
+                <div class="splt_photo col-sm-12 col-md-6">
+                    <img class="img_spotlight" src="{{spotlight[0].photo}}" alt="{{spotlight[0].alt}}"/>
+                </div>
+                <div class="text col-sm-12 col-md-6">                    
+                    <p class="text_spotlight">{{spotlight[0].text}}</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
