@@ -12,9 +12,9 @@ namespace Model;
 /**
  *
  */
-class ItemManager extends AbstractManager
+class PlaceManager extends AbstractManager
 {
-    const TABLE = 'item';
+    const TABLE = 'place';
 
     /**
      *  Initializes this class.
