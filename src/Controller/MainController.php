@@ -27,7 +27,7 @@ class MainController extends AbstractController
     public function index()
     {
         $galleryManager = new GalleryManager();
-        $gallery = $galleryManager->selectAll();
+        $gallery = $galleryManager->selectLimitDesc(6, 'id');
         $alertManager = new AlertManager();
         $alert = $alertManager->selectFirst();
         $sliderManager = new SliderManager();

@@ -103,4 +103,16 @@ abstract class AbstractManager
     {
         return $this->pdoConnection->query('SELECT * FROM ' . $this->table . ' LIMIT 1 ', \PDO::FETCH_CLASS, $this->className)->fetch();
     }
+
+    /**
+     * @param int $limitNumber
+     * @param string $id
+     * @return array
+     */
+    public function selectLimitDesc(int $limitNumber, string $id)
+    {
+        return $this->pdoConnection->query("SELECT * FROM $this->table 
+                                                      ORDER BY $id DESC LIMIT $limitNumber",
+                                                \PDO::FETCH_CLASS, $this->className)->fetchAll();
+    }
 }
