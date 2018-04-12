@@ -1,8 +1,11 @@
 
 {% extends 'layout.html.twig' %}
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" media="screen" href="assets/css/navbar.css">
+{% endblock %}
 {% block body %}
     {% include 'include/navbar.html.twig' %}
-    {% include 'main/spotlight.html.twig' with {'spotlight':'spotlight'} %}{#ds#}
     {% block content %}{%  endblock %}
     {% include 'include/footer.html.twig' %}
 {% endblock %}
