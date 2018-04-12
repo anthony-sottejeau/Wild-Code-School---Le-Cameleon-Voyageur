@@ -133,6 +133,13 @@ section:nth-child(even){
     Padding-bottom: 10px;
 }
 
+.notification {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index:10;
+}
+
 /* team */
 
 .team {

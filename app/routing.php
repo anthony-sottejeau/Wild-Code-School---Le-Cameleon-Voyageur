@@ -18,5 +18,6 @@ $routes = [
     ],
     'Admin' => [
         ['index', '/admin','GET'],
+        ['placeUpdate', '/placeUpdate','POST'],
     ]
 ];

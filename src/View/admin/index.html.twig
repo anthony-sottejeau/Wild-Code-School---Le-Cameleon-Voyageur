@@ -1,6 +1,17 @@
 {% extends 'admin/body.html.twig' %}
 
 {% block content %}
+
+    {% if notification is defined %}
+        <div class="container-fluid notification text-center">
+            <div class="row">
+                <div class="alert alert-{{ notification.type }}" role="alert">
+                    {{ notification.message }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
     <div class="container">
         <div class="row">
             <div class="col-sm-12 hidden-xs text-center admin-menu">

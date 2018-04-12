@@ -1,2 +1,42 @@
 <section id="lieux">
+    <form action="/placeUpdate" method="POST">
+        {% for place in places %}
+            <div class="row day">
+                <div class="col-xs-12">
+                    <h3>
+                        {{ place.day }}
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <span class="hour">12h-14h :</span>
+                    <div class="form-group">
+                        <label for="{{ place.day }}-adress-12">Adresse</label>
+                         <input class="form-control" type="text" id="{{ place.day }}-adress-12" name="{{ place.day }}-adress-12" value="{{ place.adress_day }}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ place.day }}-coord-12">Coordonnées</label>
+                        <input class="form-control" type="text" id="{{ place.day }}-coord-12" name="{{ place.day }}-coord-12" value="{{ place.coord_day }}"/>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <span class="hour">19h-21h :</span>
+                    <div class="form-group">
+                        <label for="{{ place.day }}-adress-19">Adresse</label>
+                        <input class="form-control" type="text" id="{{ place.day }}-adress-19" name="{{ place.day }}-adress-19" value="{{ place.adress_evening }}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ place.day }}-coord-19">Coordonnées</label>
+                        <input class="form-control" type="text" id="{{ place.day }}-coord-19" name="{{ place.day }}-coord-19" value="{{ place.coord_evening }}"/>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <input type="submit" value="Valider" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
 </section>
