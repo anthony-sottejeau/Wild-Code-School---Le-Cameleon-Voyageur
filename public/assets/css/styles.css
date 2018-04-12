@@ -1,3 +1,47 @@
+.icons {
+
+    padding-right: 0;
+    padding-left:  0;
+    margin-top: 15px;
+}
+.list-inline img {
+    width: 24px;
+    height: 24px;
+}
+footer ul {
+    font-size: 80%;
+    margin-top: 10px;
+}
+
+footer p {
+
+    color: #C5C1C2;
+    font-size: 80%;
+    margin: 0;
+    padding: 0;
+}
+
+.listlink a{
+    padding: 0px;
+    margin: 0px;
+    color: #C5C1C2 ;
+}
+
+footer {
+    background-color:black;
+}
+
+.face {
+    float: right;
+    max-height: 20%;
+}
+
+.face img {
+    width: 40%;
+    height: auto;
+    padding: 10px;
+}
+
 @font-face {
     font-family: plaza;
     src: url(../fonts/29849_PlazaITC-Normal.ttf);
@@ -9,6 +53,7 @@ body{
     background-color:#EEE;
     font-size :1.5em;
     font-family : 'Open Sans', sans-serif;
+    padding-top:70px;
 }
 
 h1{
@@ -44,7 +89,7 @@ h2:after, h2:before{
     content: "\e044";
     font-family: 'Glyphicons Halflings';
     display: inline-block;
-    padding-top:5px;
+    padding-top:3px;
 }
 
 h2:after{
@@ -57,10 +102,63 @@ h2:before{
     padding-left: 13px;
 }
 
-h3{
+h3 {
     color:#000;
     font-size: 2em;
     font-family: plaza;
+}
+section:nth-child(odd){
+    background-color:#EEE;
+}
+
+section:nth-child(even){
+    background-color:#333;
+    color:#EEEEEE;
+}
+
+/* team */
+
+.team {
+    padding-bottom: 20px;
+}
+
+.team .img-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+}
+
+.team img {
+    border: 2px solid white;
+    box-shadow: 0 0 0 13px rgba(6, 6, 6, 0.85);
+    width: 100%;
+    max-width: 200px;
+    margin: 15px;
+}
+
+.team .description-container:first-of-type h3 {
+    text-align:right;
+}
+
+.team .description-container:nth-of-type(2) h3 {
+    text-align:left;
+}
+
+.team .description-container:first-of-type p {
+    text-align:right;
+}
+
+.team .description-container:nth-of-type(2) p {
+    text-align:left;
+}
+
+.team center-team {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Gallery */

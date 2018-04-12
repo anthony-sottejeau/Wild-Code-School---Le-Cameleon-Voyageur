@@ -9,14 +9,11 @@
 
 namespace Controller;
 
+use Model\TeamManager;
 use Model\GalleryManager;
 use Model\AlertManager;
 use Model\SliderManager;
 
-/**
- * Class ItemController
- *
- */
 class MainController extends AbstractController
 {
     /**
@@ -24,8 +21,11 @@ class MainController extends AbstractController
      *
      * @return string
      */
+
     public function index()
     {
+        $teamManager = new TeamManager();
+        $team = $teamManager->selectAll();
         $galleryManager = new GalleryManager();
         $gallery = $galleryManager->selectLimitDesc(6, 'id');
         $alertManager = new AlertManager();
@@ -34,6 +34,8 @@ class MainController extends AbstractController
         $slider = $sliderManager->selectAll();
         return $this->twig->render('main/index.html.twig', ['alert' => $alert,
                                                                   'slider'=> $slider,
+                                                                  'team'=>$team,
                                                                   'gallery'=>$gallery]);
     }
+
 }
