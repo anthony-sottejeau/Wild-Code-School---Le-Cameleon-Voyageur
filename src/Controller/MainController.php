@@ -22,15 +22,9 @@ class MainController extends AbstractController
      * @return string
      */
     public function index()
-    {
-        $spotlight = $this->getSpotlight();//ds
-        return $this->twig->render('main/index.html.twig', ['spotlight'=>$spotlight]);//ds
-    }
-
-    public function getSpotlight() : array //ds
-    {
+    { 
         $spotlightManager = new SpotlightManager();
         $spotlight = $spotlightManager->selectAll();
-        return $spotlight;
+        return $this->twig->render('main/index.html.twig', ['spotlight'=>$spotlight]);//ds
     }
 }
