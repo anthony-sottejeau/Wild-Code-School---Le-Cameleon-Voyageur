@@ -92,4 +92,15 @@ abstract class AbstractManager
     {
         //TODO : Implements SQL UPDATE request
     }
+
+
+    /**
+     * Get first row from database.
+     *
+     * @return array
+     */
+    public function selectFirst()
+    {
+        return $this->pdoConnection->query('SELECT * FROM ' . $this->table . ' LIMIT 1 ', \PDO::FETCH_CLASS, $this->className)->fetch();
+    }
 }
