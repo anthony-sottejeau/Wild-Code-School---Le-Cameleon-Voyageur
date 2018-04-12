@@ -2,10 +2,9 @@
 
 {% block stylesheet %}
     {{ parent() }}
-    <link rel="stylesheet" href="assets/css/food.css">
+    <link rel="stylesheet" media="screen"  href="assets/css/food.css">
 {% endblock %}
-
-{% block body %}
+{% block content %}
     <div class="container">
         <h2 class="text-center">Notre carte</h2>
         {% for category, foods in foodCategories %}

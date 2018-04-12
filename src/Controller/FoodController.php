@@ -20,10 +20,10 @@ class FoodController extends AbstractController
     public function index()
     {
         $foodManager = new FoodManager();
-        $foods = $foodManager->selectAllFood();
+        $foods = $foodManager->selectFoodByCategory();
         $foodCategories = [];
-        foreach ($foods as $key=>$value){
-            $foodCategories[$value->categoryName][]=$value;
+        foreach($foods as $food) {
+            $foodCategories[$food['categoryName']][] = $food;
         }
         return $this->twig->render('food/list.html.twig', ['foodCategories'=>$foodCategories]);
     }

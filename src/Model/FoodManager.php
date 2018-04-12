@@ -16,8 +16,8 @@ class FoodManager extends AbstractManager
         parent::__construct(self::TABLE);
     }
 
-    public function selectAllFood(): array
+    public function selectFoodByCategory(): array
     {
-        return $this->pdoConnection->query('SELECT *,f.name AS foodName, c.name AS categoryName FROM food AS f JOIN category c on c.id = f.category', \PDO::FETCH_CLASS, $this->className)->fetchAll();
+        return $this->pdoConnection->query('SELECT *,f.name AS foodName, c.name AS categoryName FROM food AS f JOIN category c on c.id = f.category', \PDO::FETCH_ASSOC, $this->className)->fetchAll();
     }
 }
