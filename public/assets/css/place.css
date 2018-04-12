@@ -1,7 +1,12 @@
 .hour{
     font-weight: bold;
+    margin-left:50px;
 }
 
 .places-map{
     height: 80vh;
+}
+
+h3{
+    color:#EE7722;
 }

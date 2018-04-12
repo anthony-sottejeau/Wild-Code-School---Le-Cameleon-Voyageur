@@ -17,17 +17,17 @@
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             {% for place in places %}
                 {% if place.adress_day or place.adress_evening %}
-                    <div class="day">
+                    <div class="day text-center">
                         <h3>
                             {{ place.day }}
                         </h3>
                     </div>
                     <div>
-                        <span class="hour">12h-14h :</span>
+                        <span class="hour"><span class="glyphicon glyphicon-map-marker"></span>12h-14h :</span>
                         <span id="{{ place.day }}_12h-14h" data="{{ place.coord_day }}" class="marker">{{ place.adress_day }}</span>
                     </div>
                     <div>
-                        <span class="hour">19h-21h :</span>
+                        <span class="hour"><span class="glyphicon glyphicon-map-marker"></span>19h-21h :</span>
                         <span id="{{ place.day }}_19h-21h" data="{{ place.coord_evening }}" class="marker">{{ place.adress_evening }}</span>
                     </div>
                 {% endif %}
