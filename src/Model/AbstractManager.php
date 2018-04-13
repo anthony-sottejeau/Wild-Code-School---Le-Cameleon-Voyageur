@@ -96,7 +96,7 @@ abstract class AbstractManager
         foreach($data as $key=>$value){
             $query .= $key . "=:" . $key . ", ";
         }
-        $query = substr($query,0, strlen($query)-2); // on retire la virgule moche
+        $query = substr($query,0, strlen($query)-2); // on retire la virgule en trop pour la requete
         $query .= " WHERE " . key($id) . "=:id";
 
         $statement = $this->pdoConnection->prepare($query);
