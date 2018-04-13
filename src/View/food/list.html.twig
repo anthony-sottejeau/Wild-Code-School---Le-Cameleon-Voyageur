@@ -1,0 +1,33 @@
+{% extends 'main/body.html.twig' %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" media="screen"  href="assets/css/food.css">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2 class="text-center">Notre carte</h2>
+        {% for category, foods in foodCategories %}
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>{{ category}}</h3>
+                </div>
+                {% for food in foods %}
+                    <div class="col-md-6 col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <h4>{{ food.foodName }}</h4>
+                            </div>
+                            <div class="col-xs-3">
+                                <p>{{ food.price }}€</p>
+                            </div>
+                            <div class="col-xs-12">
+                                <p>{{ food.ingredients }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

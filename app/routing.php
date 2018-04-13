@@ -15,5 +15,8 @@ $routes = [
     ],
     'Place' => [
         ['index', '/lieux','GET'],
-    ]
+    ],
+    'Food' => [
+        ['index', '/menu', 'GET'],
+]
 ];
