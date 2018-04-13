@@ -9,17 +9,22 @@
 
 namespace Controller;
 
-use Model\CompanyManager;
+
+
 
 /**
  * Class ItemController
  */
+use Model\CompanyManager;
+
+use Model\SpotlightManager;
 
 use Model\AlertManager;
 
 use Model\SliderManager;
 
 use Model\TeamManager;
+
 
 class MainController extends AbstractController
 {
@@ -30,10 +35,13 @@ class MainController extends AbstractController
      */
 
     public function index()
+
     {
 
         $companyManager = new CompanyManager();
         $company = $companyManager->selectFirst();
+        $spotlightManager = new SpotlightManager();
+        $spotlight = $spotlightManager->selectFirst();
         $teamManager = new TeamManager();
         $team = $teamManager->selectAll();
         $alertManager = new AlertManager();
@@ -44,9 +52,10 @@ class MainController extends AbstractController
                 'alert' => $alert, 
                 'slider'=> $slider, 
                 'team'=>$team, 
-                'company'=>$company,
+                'company'=>$company, 
+                'spotlight'=>$spotlight, 
+                'team'=>$team,
             ]
-        );
-
+         );
     }
 }
