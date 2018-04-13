@@ -154,6 +154,7 @@ section:nth-child(even){
     margin-top: auto; 
     margin-bottom: auto;
     padding-top: 15px;
+}
 
 /* alert */
 .alert {
