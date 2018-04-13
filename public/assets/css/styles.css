@@ -51,7 +51,8 @@ body{
     background-color:#EEE;
     font-size :1.5em;
     font-family : 'Open Sans', sans-serif;
-    padding-top:70px;
+    margin-top: 70px;
+
 }
 
 h1{
@@ -106,6 +107,29 @@ h3 {
     font-family: plaza;
 }
 
+h3:after, h3:before{
+    content: "\e044";
+    font-family: 'Glyphicons Halflings';
+    display: inline-block;
+    padding-top:5px;
+}
+
+h3:after{
+    transform: rotate(-90deg);
+    padding-right: 18px;
+}
+
+h3:before{
+    transform: rotate(90deg);
+    padding-left: 13px;
+}
+
+h4 {
+    color:#000;
+    font-size: 2em;
+    font-family: plaza;
+}
+
 section:nth-child(odd){
     background-color:#EEE;
 }
@@ -113,6 +137,13 @@ section:nth-child(odd){
 section:nth-child(even){
     background-color:#333;
     color:#EEEEEE;
+}
+
+/* alert */
+.alert {
+    color: white;
+    font-size: 1.5em;
+    background-color: #ee7722;
 }
 
 /* team */
@@ -155,6 +186,7 @@ section:nth-child(even){
         text-align: center;
     }
 }
+
 .slider {
     padding: 0;
 }
