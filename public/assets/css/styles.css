@@ -153,6 +153,24 @@ section:nth-child(even){
 }
 
 
+/*spotlight*/
+
+.title_spotlight{
+    text-align: center; 
+    margin-top: 75px;
+}
+
+.img_spotlight{
+    margin-right: 15px
+}
+
+.text_spotlight{
+    margin-top: auto; 
+    margin-bottom: auto;
+    padding-top: 15px;
+}
+
+
 .admin-menu .nav-tabs>li.active>a{
     background-color:#EEE;
     color:#333;
