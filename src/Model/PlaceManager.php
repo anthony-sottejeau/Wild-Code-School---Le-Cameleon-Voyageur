@@ -15,7 +15,6 @@ namespace Model;
 class PlaceManager extends AbstractManager
 {
     const TABLE = 'place';
-
     /**
      *  Initializes this class.
      */
