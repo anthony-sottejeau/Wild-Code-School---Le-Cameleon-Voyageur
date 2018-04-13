@@ -43,5 +43,4 @@ class MainController extends AbstractController
         return $this->twig->render('main/index.html.twig', ['alert' => $alert,'slider'=> $slider, 'company'=>$company, 'team'=>$team]);
 
     }
-
 }
