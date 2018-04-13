@@ -14,21 +14,26 @@ footer ul {
 }
 
 footer p {
-
     color: #C5C1C2;
     font-size: 80%;
     margin: 0;
     padding: 0;
 }
+
 .listlink a{
     padding: 0px;
     margin: 0px;
     color: #C5C1C2 ;
 }
-footer {
 
+footer {
     background-color:black;
 }
+
+.admin-footer{
+    background-color:transparent;
+}
+
 .face {
     float: right;
     max-height: 20%;
