@@ -2,10 +2,11 @@
 
 {% block content %}
     {% include 'main/alert.html.twig' %}
+    {% include 'main/slider.html.twig' %}
     <section id="alert"></section>
     <section id="header"></section>
     <section id="spotlight"></section>
     <section id="concept"></section>
-    <section id="team"></section>
+    {% include 'main/team.html.twig' %}
     <section id="gallerie"></section>
 {% endblock %}
