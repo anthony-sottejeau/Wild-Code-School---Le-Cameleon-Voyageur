@@ -71,3 +71,9 @@ section :nth-child(even){
     background-color:#333;
     color:#EEEEEE;
 }
+
+.alert {
+    color: white;
+    font-size: 1.5em;
+    background-color:#ee7722 ;
+}
