@@ -8,11 +8,12 @@
  */
 
 namespace Controller;
+use Model\AlertManager;
 
-/**
- * Class ItemController
- *
- */
+use Model\SliderManager;
+
+use Model\TeamManager;
+
 class MainController extends AbstractController
 {
     /**
@@ -20,8 +21,15 @@ class MainController extends AbstractController
      *
      * @return string
      */
+
     public function index()
     {
-        return $this->twig->render('main/index.html.twig');
+        $teamManager = new TeamManager();
+        $team = $teamManager->selectAll();
+        $alertManager = new AlertManager();
+        $alert = $alertManager->selectFirst();
+        $sliderManager = new SliderManager();
+        $slider = $sliderManager->selectAll();
+        return $this->twig->render('main/index.html.twig', ['alert' => $alert,'slider'=> $slider,'team'=>$team]);
     }
 }

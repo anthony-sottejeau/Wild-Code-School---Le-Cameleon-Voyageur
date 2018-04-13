@@ -1,12 +1,4 @@
-{% extends 'main/body.html.twig' %}
-
-{% block stylesheet %}
-    {{ parent() }}
-    <link rel="stylesheet" media="screen" href="assets/css/navbar.css">
-{% endblock %}
-
 {% block body %}
-
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
 
@@ -19,7 +11,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a href="#" class="navbar-brand"><img src="assets/images/logo_cameleon.png" class="logo img-responsive" ><span class="cameleon">Le cameleon voyageur</span></a>
+                <a href="/" class="navbar-brand"><img src="assets/images/logo_cameleon.png" class="logo img-responsive" ><span class="cameleon">Le cameleon voyageur</span></a>
 
             </div>
 
@@ -27,11 +19,11 @@
                 <ul class="nav navbar-nav">
 
                     <li>
-                        <a class="page-scroll" href="#menu">Notre carte</a>
+                        <a class="page-scroll" href="/menu">Notre carte</a>
                     </li>
 
                     <li>
-                        <a class="page-scroll" href="#findUs">Où nous trouver</a>
+                        <a class="page-scroll" href="/lieux">Où nous trouver</a>
                     </li>
 
                     <li>
