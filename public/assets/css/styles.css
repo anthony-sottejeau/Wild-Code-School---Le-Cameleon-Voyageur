@@ -56,7 +56,8 @@ body{
     background-color:#EEE;
     font-size :1.5em;
     font-family : 'Open Sans', sans-serif;
-    padding-top:70px;
+    margin-top: 70px;
+
 }
 
 a{
@@ -119,6 +120,29 @@ h3 {
     font-family: plaza;
 }
 
+h3:after, h3:before{
+    content: "\e044";
+    font-family: 'Glyphicons Halflings';
+    display: inline-block;
+    padding-top:5px;
+}
+
+h3:after{
+    transform: rotate(-90deg);
+    padding-right: 18px;
+}
+
+h3:before{
+    transform: rotate(90deg);
+    padding-left: 13px;
+}
+
+h4 {
+    color:#000;
+    font-size: 2em;
+    font-family: plaza;
+}
+
 section:nth-child(odd){
     background-color:#EEE;
 }
@@ -128,6 +152,7 @@ section:nth-child(even){
     color:#EEEEEE;
 }
 
+
 .admin-menu .nav-tabs>li.active>a{
     background-color:#EEE;
     color:#333;
@@ -136,6 +161,13 @@ section:nth-child(even){
 .section-admin{
     padding-top: 10px;
     Padding-bottom: 10px;
+
+/* alert */
+.alert {
+    color: white;
+    font-size: 1.5em;
+    background-color: #ee7722;
+
 }
 
 /* team */
@@ -149,31 +181,34 @@ section:nth-child(even){
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: inherit;
+    height: 200px;
 }
 
 .team img {
-    border: 2px solid white;
-    box-shadow: 0 0 0 13px rgba(6, 6, 6, 0.85);
     width: 100%;
-    max-width: 200px;
-    margin: 15px;
+    max-width: 180px;
 }
 
-.team .description-container:first-of-type h3 {
-    text-align:right;
+.team .description-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
 }
 
-.team .description-container:nth-of-type(2) h3 {
-    text-align:left;
+.team h3{
+    color:#e72;
 }
 
-.team .description-container:first-of-type p {
-    text-align:right;
-}
+@media screen and (max-width: 766px) {
+    .team h3 {
+        text-align: center;
+    }
 
-.team .description-container:nth-of-type(2) p {
-    text-align:left;
+    .team p {
+        text-align: center;
+    }
 }
 
 .team center-team {
@@ -182,3 +217,4 @@ section:nth-child(even){
     justify-content: center;
     align-items: center;
 }
+
