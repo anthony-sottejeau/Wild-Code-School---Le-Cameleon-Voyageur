@@ -9,7 +9,7 @@
 
 namespace Controller;
 
-use Model\SpotlightManager; //ds
+use Model\SpotlightManager;
 
 use Model\AlertManager;
 
@@ -29,7 +29,7 @@ class MainController extends AbstractController
     public function index()
     { 
         $spotlightManager = new SpotlightManager();
-        $spotlight = $spotlightManager->selectAll();
+        $spotlight = $spotlightManager->selectFirst();
         $teamManager = new TeamManager();
         $team = $teamManager->selectAll();
         $alertManager = new AlertManager();

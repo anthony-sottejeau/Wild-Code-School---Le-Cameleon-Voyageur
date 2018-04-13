@@ -1,5 +1,5 @@
 <?php
-//created by damien tout seul!!
+
 namespace Model;
 
 class SpotlightManager extends AbstractManager
