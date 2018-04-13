@@ -1,0 +1,56 @@
+/*footer*/
+footer {
+    background-color:#343232;
+    height: 180px;
+}
+.icons {
+    margin-top: 60px;
+    text-align: center;
+}
+.list-inline img {
+    width: 32px;
+    height: 32px;
+}
+.list-inline>li>a>i>img:hover {
+    animation: spinAround 2s linear infinite;
+}
+.phone {
+    width: auto;
+}
+.phone p{
+    margin-bottom: 0;
+    text-align: center;
+}
+footer ul {
+    margin-top: 3.5rem;
+}
+footer p {
+    color: #C5C1C2;
+    margin-left: 1vh;
+    padding: 0;
+}
+.listlink a{
+    color: #C5C1C2 ;
+    font-size: 1.2em;
+}
+.listlink>ul>li>a:hover {
+    color: #728e20;
+    text-decoration: none;
+}
+.face {
+    float: right;
+    padding: 2px;
+    text-align: center;
+}
+.listlink>ul>li>a::before {
+    content: "| ";
+    color: orangered;
+}
+@keyframes spinAround {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

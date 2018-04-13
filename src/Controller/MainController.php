@@ -9,10 +9,12 @@
 
 namespace Controller;
 
+use Model\SpotlightManager;
 use Model\TeamManager;
 use Model\GalleryManager;
 use Model\AlertManager;
 use Model\SliderManager;
+
 
 class MainController extends AbstractController
 {
@@ -23,7 +25,9 @@ class MainController extends AbstractController
      */
 
     public function index()
-    {
+    { 
+        $spotlightManager = new SpotlightManager();
+        $spotlight = $spotlightManager->selectFirst();
         $teamManager = new TeamManager();
         $team = $teamManager->selectAll();
         $galleryManager = new GalleryManager();
@@ -32,6 +36,13 @@ class MainController extends AbstractController
         $alert = $alertManager->selectFirst();
         $sliderManager = new SliderManager();
         $slider = $sliderManager->selectAll();
-        return $this->twig->render('main/index.html.twig', ['alert' => $alert, 'slider' => $slider, 'team' => $team, 'gallery'=>$gallery]);
+        return $this->twig->render('main/index.html.twig', [
+                'alert' => $alert, 
+                'slider' => $slider, 
+                'spotlight'=>$spotlight, 
+                'team' => $team, 
+                'gallery'=>$gallery
+             ]
+        );
     }
 }
