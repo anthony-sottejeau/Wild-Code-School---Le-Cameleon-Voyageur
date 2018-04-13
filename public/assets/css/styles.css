@@ -47,18 +47,6 @@ footer {
     font-style: normal;
 }
 
-.title_spotlight{
-    text-align: center; 
-    margin-top: 75px;
-}
-.img_spotlight{
-    margin-right: 15px
-}
-.text{margin-top: auto; 
-    margin-bottom: auto;
-    padding-top: 15px;
-}
-
 body{
     background-color:#EEE;
     font-size :1.5em;
@@ -125,6 +113,23 @@ section:nth-child(odd){
 section:nth-child(even){
     background-color:#333;
     color:#EEEEEE;
+}
+
+/*spotlight*/
+
+.title_spotlight{
+    text-align: center; 
+    margin-top: 75px;
+}
+
+.img_spotlight{
+    margin-right: 15px
+}
+
+.text_spotlight{
+    margin-top: auto; 
+    margin-bottom: auto;
+    padding-top: 15px;
 }
 
 /* team */
