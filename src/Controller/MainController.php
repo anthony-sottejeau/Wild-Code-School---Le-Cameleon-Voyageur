@@ -34,15 +34,13 @@ class MainController extends AbstractController
 
         $companyManager = new CompanyManager();
         $company = $companyManager->selectAll();
-        return $this->twig->render('main/index.html.twig', ['company'=>$company]);
-
         $teamManager = new TeamManager();
         $team = $teamManager->selectAll();
         $alertManager = new AlertManager();
         $alert = $alertManager->selectFirst();
         $sliderManager = new SliderManager();
         $slider = $sliderManager->selectAll();     
-        return $this->twig->render('main/index.html.twig', ['alert' => $alert,'slider'=> $slider,'team'=>$team]);
+        return $this->twig->render('main/index.html.twig', ['alert' => $alert,'slider'=> $slider, 'company'=>$company, 'team'=>$team]);
 
     }
 
