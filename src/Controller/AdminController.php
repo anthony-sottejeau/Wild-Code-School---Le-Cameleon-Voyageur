@@ -38,7 +38,7 @@ class AdminController extends AbstractController
                 ||($_POST[$day->getDay().'-coord-12'] != $day->coord_day)
                 ||($_POST[$day->getDay().'-coord-19'] != $day->coord_evening)){
                 try {
-                    $placeManager->update($day->getId(),[
+                    $placeManager->update(['id'=>$day->getId()],[
                         'adress_day'=>$_POST[$day->getDay().'-adress-12'],
                         'coord_day'=>$_POST[$day->getDay().'-coord-12'],
                         'adress_evening'=>$_POST[$day->getDay().'-adress-19'],
