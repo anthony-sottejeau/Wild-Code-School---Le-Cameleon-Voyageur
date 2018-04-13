@@ -95,20 +95,29 @@ h2{
 }
 
 h2:after, h2:before{
-    content: "\e044";
+    color:#728e20;
     font-family: 'Glyphicons Halflings';
+    font-size:0.8em;
     display: inline-block;
     padding-top:3px;
+    letter-spacing: -10px;
+
 }
 
 h2:after{
-    transform: rotate(-90deg);
-    padding-right: 18px;
+    padding-left:10px;
+    content: "\e079\e079\e079\e079\e079";
+    background:linear-gradient(to right,rgba(114, 142, 32, 1),rgba(114, 142, 32, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2:before{
-    transform: rotate(90deg);
-    padding-left: 13px;
+    padding-right:20px;
+    content: "\e080\e080\e080\e080\e080";
+    background:linear-gradient(to left,rgba(114, 142, 32, 1),rgba(114, 142, 32, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h3 {
@@ -117,19 +126,19 @@ h3 {
     font-family: plaza;
 }
 
-h3:after, h3:before{
+.menu h3:after,.menu h3:before{
     content: "\e044";
     font-family: 'Glyphicons Halflings';
     display: inline-block;
     padding-top:5px;
 }
 
-h3:after{
+.menu h3:after{
     transform: rotate(-90deg);
     padding-right: 18px;
 }
 
-h3:before{
+.menu h3:before{
     transform: rotate(90deg);
     padding-left: 13px;
 }
@@ -141,12 +150,10 @@ h4 {
 }
 
 section:nth-child(odd){
-    background-color:#EEE;
 }
 
 section:nth-child(even){
-    background-color:#333;
-    color:#EEEEEE;
+    margin-top: 10px;
 }
 
 
@@ -154,7 +161,7 @@ section:nth-child(even){
 
 .title_spotlight{
     text-align: center; 
-    margin-top: 75px;
+    margin-top: 20px;
 }
 
 .img_spotlight{
