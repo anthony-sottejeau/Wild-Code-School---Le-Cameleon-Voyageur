@@ -16,4 +16,16 @@ class GalleryManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
+
+
+    /**
+     * @param int $limitNumber
+     * @return array
+     */
+    public function selectLimitDesc(int $limitNumber)
+    {
+        return $this->pdoConnection->query("SELECT * FROM $this->table 
+                                                      ORDER BY id DESC LIMIT $limitNumber",
+                                                \PDO::FETCH_CLASS, $this->className)->fetchAll();
+    }
 }

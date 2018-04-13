@@ -5,12 +5,12 @@
         </div>
         <div>
             {% for picture in gallery %}
-                <div class="col-xs-6 col-md-4 container-img">
-                    <a href="#" class="thumbnail" data-toggle="modal" data-target="#myModal{{ loop.index }}">
-                        <img src="{{ picture.url }}" alt="{{ picture.alt }}">
+                <div class="col-xs-6 col-md-4 container-img text-center">
+                    <a href="#" class="thumbnail" data-toggle="modal" data-target="#galleryModal{{ loop.index }}">
+                        <img class=".img-responsive" src="{{ picture.url }}" alt="{{ picture.alt }}">
                     </a>
                 </div>
-                <div class="modal" id="myModal{{ loop.index }}" tabindex="-1" role="dialog">
+                <div class="modal" id="galleryModal{{ loop.index }}" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-body">

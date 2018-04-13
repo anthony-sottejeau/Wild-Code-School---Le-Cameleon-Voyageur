@@ -163,11 +163,6 @@ section:nth-child(even){
 
 /* Gallery */
 
-.gallery .container-img img {
-    width: 100%;
-    height: 260px;
-    max-width: 100%;
-}
 
 .gallery .modal img {
     width: 100%;
@@ -185,12 +180,20 @@ section:nth-child(even){
     height: 40px;
 }
 
+.gallery .thumbnail {
+    overflow: hidden;
+    height: 260px;
+    width:100%;
+    display: inline-block;
+}
+
+.gallery .thumbnail img {
+    height:100%;
+    object-fit: cover;
+ }
+
+
 a.thumbnail:hover {
     border: 1px #728e20 solid;
 }
 
-@media screen and (max-width: 500px) {
-    .gallery .container-img img {
-        max-height: 120px;
-    }
-}

@@ -27,15 +27,11 @@ class MainController extends AbstractController
         $teamManager = new TeamManager();
         $team = $teamManager->selectAll();
         $galleryManager = new GalleryManager();
-        $gallery = $galleryManager->selectLimitDesc(6, 'id');
+        $gallery = $galleryManager->selectLimitDesc(6);
         $alertManager = new AlertManager();
         $alert = $alertManager->selectFirst();
         $sliderManager = new SliderManager();
         $slider = $sliderManager->selectAll();
-        return $this->twig->render('main/index.html.twig', ['alert' => $alert,
-                                                                  'slider'=> $slider,
-                                                                  'team'=>$team,
-                                                                  'gallery'=>$gallery]);
+        return $this->twig->render('main/index.html.twig', ['alert' => $alert, 'slider' => $slider, 'team' => $team, 'gallery'=>$gallery]);
     }
-
 }
