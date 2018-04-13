@@ -56,7 +56,6 @@ class Connection
         }
     }
 
-
     /**
      * @return $pdo
      */
