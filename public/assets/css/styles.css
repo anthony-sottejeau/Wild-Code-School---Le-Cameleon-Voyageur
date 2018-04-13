@@ -173,9 +173,10 @@ section:nth-child(even){
     color:#333;
 }
 
-.section-admin{
+.section-admin {
     padding-top: 10px;
     Padding-bottom: 10px;
+}
 
 /* alert */
 .alert {
