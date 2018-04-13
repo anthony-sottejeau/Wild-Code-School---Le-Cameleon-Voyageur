@@ -39,8 +39,8 @@ class MainController extends AbstractController
         $alertManager = new AlertManager();
         $alert = $alertManager->selectFirst();
         $sliderManager = new SliderManager();
-        $slider = $sliderManager->selectAll();     
-        return $this->twig->render('main/index.html.twig', ['alert' => $alert,'slider'=> $slider, 'company'=>$company, 'team'=>$team]);
+        $slider = $sliderManager->selectAll();
+        return $this->twig->render('main/index.html.twig', ['alert' => $alert, 'slider'=> $slider, 'team'=>$team, 'company'=>$company]);
 
     }
 }
