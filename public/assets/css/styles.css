@@ -1,5 +1,4 @@
 .icons {
-
     padding-right: 0;
     padding-left:  0;
     margin-top: 15px;
@@ -44,7 +43,6 @@ footer {
     padding: 10px;
 
 }
-
 @font-face {
     font-family: plaza;
     src: url(../fonts/29849_PlazaITC-Normal.ttf);
@@ -57,7 +55,6 @@ body{
     font-size :1.5em;
     font-family : 'Open Sans', sans-serif;
     margin-top: 70px;
-
 }
 
 a{
