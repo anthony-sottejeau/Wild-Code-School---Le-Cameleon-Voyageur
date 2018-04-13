@@ -9,7 +9,7 @@
 
 namespace Controller;
 
-use Model\SpotlightManager; //ds
+use Model\SpotlightManager;
 
 use Model\AlertManager;
 
