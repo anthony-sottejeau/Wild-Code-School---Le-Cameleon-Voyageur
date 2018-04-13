@@ -155,3 +155,6 @@ section:nth-child(even){
         text-align: center;
     }
 }
+.slider {
+    padding: 0;
+}
