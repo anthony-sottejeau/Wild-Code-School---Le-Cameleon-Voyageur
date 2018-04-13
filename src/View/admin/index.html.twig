@@ -1,7 +1,6 @@
 {% extends 'admin/body.html.twig' %}
 
 {% block content %}
-
     {% if notification is defined %}
         <div class="container-fluid notification text-center">
             <div class="row">
@@ -12,37 +11,31 @@
         </div>
     {% endif %}
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 hidden-xs text-center admin-menu">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#entreprise">Entreprise</a></li>
-                    <li><a data-toggle="tab" href="#header">Présentation</a></li>
-                    <li><a data-toggle="tab" href="#gallery">Gallerie</a></li>
-                    <li><a data-toggle="tab" href="#lieux">Où nous trouver</a></li>
-                    <li><a data-toggle="tab" href="#menus">Menus</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-12 visible-xs text-center admin-menu">
-                <div class="btn-group">
-                    <ul class="nav nav-tabs">
-                        <li class="active dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Catégories
-                                <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a data-toggle="tab" href="#entreprise">Entreprise</a></li>
-                                <li><a data-toggle="tab" href="#header">Présentation</a></li>
-                                <li><a data-toggle="tab" href="#gallery">Gallerie</a></li>
-                                <li><a data-toggle="tab" href="#lieux">Où nous trouver?</a></li>
-                                <li><a data-toggle="tab" href="#menus">Menus</a></li>
-                            </ul>
-                        </li>
+    <header class="container">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a data-toggle="tab" href="#entreprise">Entreprise</a></li>
+                        <li><a data-toggle="tab" href="#header">Présentation</a></li>
+                        <li><a data-toggle="tab" href="#galerie">Galerie</a></li>
+                        <li><a data-toggle="tab" href="#lieux">Où nous trouver</a></li>
+                        <li><a data-toggle="tab" href="#menus">Menus</a></li>
+
                     </ul>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="container">
+        </nav>
+    </header>
+    <footer class="container admin-footer">
         <div class="row">
             <div class="tab-content">
                 <div id="entreprise" class="tab-pane fade in active section-admin">
@@ -51,7 +44,7 @@
                 <div id="header" class="tab-pane section-admin">
                     {# Formulaire header (slider, alerte, en lumiere) #}
                 </div>
-                <div id="gallery" class="tab-pane section-admin">
+                <div id="galerie" class="tab-pane section-admin">
                     {# Formulaire menus (galerie) #}
                 </div>
                 <div id="lieux" class="tab-pane section-admin">
@@ -63,5 +56,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
 {% endblock %}

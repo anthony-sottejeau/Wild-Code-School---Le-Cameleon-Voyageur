@@ -1,22 +1,22 @@
 <section class="team container-fluid">
-    <div class="col-md-offset-2 col-md-8">
-        <div class="col-xs-12">
-            <h2>L'équipe</h2>
-        </div>
         <div class="row">
-            {% for teamMate in team %}
-                <div class="col-xs-12">
-                    <div class="row center-team">
-                        <div class="col-xs-3 img-container {{ loop.index is odd ? 'col-xs-push-9' }}">
-                            <img class="img-circle" src="{{ teamMate.picture }}" alt="{{ teamMate.name }}">
-                        </div>
-                        <div class="col-xs-9 description-container {{ loop.index is odd ? 'col-xs-pull-3' }}">
-                            <h3>{{ teamMate.name }}</h3>
-                            <p>{{ teamMate.description }}</p>
+            <div class="col-md-offset-2 col-md-8">
+            <div class="col-xs-12">
+                <h2>L'équipe</h2>
+            </div>
+                <div class="row">
+                {% for teamMate in team %}
+                    <div class="col-xs-12 col-sm-3 img-container {{ loop.index is not odd ? 'col-sm-push-9' }}">
+                        <img class="img-responsive" src="{{ teamMate.picture }}" alt="{{ teamMate.name }}">
+                    </div>
+                    <div class="col-xs-12 col-sm-9 description-container {{ loop.index is not odd ? 'col-sm-pull-3' }}">
+                        <div>
+                            <h3 class="{{ loop.index is not odd ? 'text-right' }}">{{ teamMate.name }}</h3>
+                            <p class="{{ loop.index is not odd ? 'text-right' }}">{{ teamMate.description }}</p>
                         </div>
                     </div>
+                {% endfor %}
                 </div>
-            {% endfor %}
+            </div>
         </div>
-    </div>
 </section>
