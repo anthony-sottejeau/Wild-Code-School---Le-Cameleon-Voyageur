@@ -141,14 +141,13 @@ h4 {
 }
 
 section:nth-child(odd){
-    background-color:#EEE;
+    /*background-color:#EEE;*/
 }
 
 section:nth-child(even){
-    background-color:#333;
-    color:#EEEEEE;
+    background-color:#ecf0f1;
+    color:black;
 }
-
 
 /*spotlight*/
 
