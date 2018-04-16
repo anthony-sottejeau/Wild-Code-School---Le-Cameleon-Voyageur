@@ -90,17 +90,17 @@ abstract class AbstractManager
      * @param array $data
      *    un tableau avec la colone en clé et la valeur en valeur
      */
-    public function update(array $id, array $data)
+    public function update(int $id, array $data)
     {
         $query = "UPDATE $this->table SET ";
         foreach($data as $key=>$value){
-            $query .= $key . "=:" . $key . ", ";
+            $queryParts[] = $key . "=:" . $key;
         }
-        $query = substr($query,0, strlen($query)-2); // on retire la virgule en trop pour la requete
-        $query .= " WHERE " . key($id) . "=:id";
+        $query .= implode(', ', $queryParts); // on retire la virgule en trop pour la requete
+        $query .= " WHERE id=:id";
 
         $statement = $this->pdoConnection->prepare($query);
-        $statement->bindValue('id', $id[key($id)]);
+        $statement->bindValue('id', $id);
         foreach($data as $key=>$value){
             $statement->bindValue($key, $value);
         }
