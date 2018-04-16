@@ -9,6 +9,14 @@
 
 namespace Controller;
 
+
+
+
+/**
+ * Class ItemController
+ */
+use Model\CompanyManager;
+
 use Model\SpotlightManager;
 use Model\TeamManager;
 use Model\GalleryManager;
@@ -25,7 +33,10 @@ class MainController extends AbstractController
      */
 
     public function index()
-    { 
+
+    {
+        $companyManager = new CompanyManager();
+        $company = $companyManager->selectFirst();
         $spotlightManager = new SpotlightManager();
         $spotlight = $spotlightManager->selectFirst();
         $teamManager = new TeamManager();
@@ -38,11 +49,13 @@ class MainController extends AbstractController
         $slider = $sliderManager->selectAll();
         return $this->twig->render('main/index.html.twig', [
                 'alert' => $alert, 
-                'slider' => $slider, 
+                'slider'=> $slider, 
+                'team'=>$team, 
+                'company'=>$company, 
                 'spotlight'=>$spotlight, 
-                'team' => $team, 
-                'gallery'=>$gallery
-             ]
-        );
+                'team'=>$team,
+                'gallery'=>$gallery,
+            ]
+         );
     }
 }
