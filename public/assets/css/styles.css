@@ -56,9 +56,14 @@ footer {
 
 body{
     background-color:#EEE;
-    font-size :1.5em;
-    font-family : 'Open Sans', sans-serif;
+    font-family: "Open Sans";
+    font-size: 25px;
     margin-top: 70px;
+}
+
+
+section{
+    margin-top:10px;
 }
 
 a{
@@ -71,7 +76,7 @@ a:hover{
 
 h1{
     color:#728e20;
-    font-size: 4em;
+    font-size: 40px;
     font-family: plaza;
 }
 
@@ -93,47 +98,56 @@ h1:before{
 }
 
 h2{
-    color:#728e20;
-    font-size: 3em;
+    color:#ee7722;
+    font-size: 60px;
     font-family: plaza;
 }
 
 h2:after, h2:before{
-    content: "\e044";
+    color:#ee7722;
     font-family: 'Glyphicons Halflings';
+    font-size:0.8em;
     display: inline-block;
     padding-top:3px;
+    letter-spacing: -10px;
+
 }
 
 h2:after{
-    transform: rotate(-90deg);
-    padding-right: 18px;
+    padding-left:10px;
+    content: "\e079\e079\e079\e079\e079";
+    background:linear-gradient(to right,rgba(238, 119, 34, 1),rgba(238, 119, 34, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2:before{
-    transform: rotate(90deg);
-    padding-left: 13px;
+    padding-right:20px;
+    content: "\e080\e080\e080\e080\e080";
+    background:linear-gradient(to left,rgba(238, 119, 34, 1),rgba(238, 119, 34, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h3 {
-    color:#000;
+    color:#728e20;
     font-size: 2em;
     font-family: plaza;
 }
 
-h3:after, h3:before{
+.menu h3:after,.menu h3:before{
     content: "\e044";
     font-family: 'Glyphicons Halflings';
     display: inline-block;
     padding-top:5px;
 }
 
-h3:after{
+.menu h3:after{
     transform: rotate(-90deg);
     padding-right: 18px;
 }
 
-h3:before{
+.menu h3:before{
     transform: rotate(90deg);
     padding-left: 13px;
 }
@@ -144,21 +158,12 @@ h4 {
     font-family: plaza;
 }
 
-section:nth-child(odd){
-    background-color:#EEE;
-}
-
-section:nth-child(even){
-    background-color:#333;
-    color:#EEEEEE;
-}
-
 
 /*spotlight*/
 
 .title_spotlight{
     text-align: center; 
-    margin-top: 75px;
+    margin-top: 20px;
 }
 
 .img_spotlight{
@@ -183,11 +188,10 @@ section:nth-child(even){
 }
 
 /* alert */
-.alert {
+.alert-message {
     color: white;
     font-size: 1.5em;
     background-color: #ee7722;
-
     padding: 0;
     margin: 0;
 
@@ -204,7 +208,6 @@ section:nth-child(even){
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 200px;
 }
 
 .team img {
@@ -217,11 +220,10 @@ section:nth-child(even){
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 200px;
 }
 
 .team h3{
-    color:#e72;
+    color:#728e20;
 }
 
 @media screen and (max-width: 766px) {
