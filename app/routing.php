@@ -21,7 +21,9 @@ $routes = [
     ],
     'PlaceAdmin' => [
         ['index', '/admin/place','GET'],
-        ['update', '/admin/place/update','POST'],
+        ['index', '/admin/place/{type}/{message}','GET'],
+        ['edit', '/admin/place/edit','POST'],
+        ['edit', '/admin/place/edit','GET'],
     ],
     'Food' => [
         ['index', '/menu', 'GET'],
