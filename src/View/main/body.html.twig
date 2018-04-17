@@ -1,12 +1,9 @@
-
 {% extends 'layout.html.twig' %}
-
 {% block stylesheet %}
     {{ parent() }}
     <link rel="stylesheet" media="screen" href="assets/css/navbar.css">
     <link rel="stylesheet" media="screen" href="assets/css/footer.css">
 {% endblock %}
-
 {% block body %}
     {% include 'include/navbar.html.twig' %}
     {% block content %}

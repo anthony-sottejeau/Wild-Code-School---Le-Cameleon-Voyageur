@@ -37,19 +37,15 @@ footer {
     background-color:black;
 }
 
-.admin-footer{
-    background-color:transparent;
-}
-
 .face {
     float: right;
     max-height: 20%;
 }
+
 .face img {
     width: 40%;
     height: auto;
     padding: 10px;
-
 }
 @font-face {
     font-family: plaza;
@@ -245,3 +241,42 @@ section:nth-child(even){
     align-items: center;
 }
 
+/* Gallery */
+
+.gallery .modal img {
+    width: 100%;
+    height: 100%;
+}
+
+.gallery .button-container{
+    padding: 0 30px;
+}
+
+.gallery .button-container a {
+    background-color: #728e20;
+    color: white;
+    width: 250px;
+    height: 40px;
+}
+
+.gallery .thumbnail {
+    overflow: hidden;
+    height: 260px;
+    width:100%;
+    display: inline-block;
+}
+
+.gallery .thumbnail img {
+    height:100%;
+    object-fit: cover;
+ }
+
+
+a.thumbnail:hover {
+    border: 1px #728e20 solid;
+}
+
+/*admin*/
+.admin-footer{
+    background-color:transparent;
+}
