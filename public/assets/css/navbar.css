@@ -7,25 +7,25 @@
 }
 
 .navbar-fixed-top {
-    background-color: #343232;
+    background-color: #aed135;
     height: 70px;
-
 }
 
 
 .navbar-default .navbar-collapse {
-    background-color: #343232;
+    background-color: #aed135;
+    border:0px;
 }
 .navbar-default .navbar-nav>li>a {
-    font-size: 1.5em;
-    color: #e5dcdc;
+    font-size: 25px;
+    color: #FFF;
     line-height: 150%;
     font-family: "plaza", "Open Sans";
 
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-    color: #728e20;
+    color:#728e20;
 }
 
 .logo{
@@ -42,9 +42,8 @@
     padding: 3px;
 }
 .cameleon {
-
     font-size: 1.7em;
-    color: #728e20;
+    color: #FFF;
     line-height: 200%;
     font-family: "plaza", "Open Sans";
     height: inherit;
@@ -58,5 +57,5 @@
 
 }
 .navbar-default .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
-    background-color: #728e20;
+    background-color: #aed135;
 }
