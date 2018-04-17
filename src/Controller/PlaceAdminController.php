@@ -24,7 +24,7 @@ class PlaceAdminController extends AbstractController
     public function index()
     {
         session_start();
-        if (!isset($_SESSION['notification'])){
+        if (!isset($_SESSION['notification'])) {
             $_SESSION['notification'] = null;
         }
         $placeManager = new PlaceManager();
@@ -38,22 +38,22 @@ class PlaceAdminController extends AbstractController
     public function edit()
     {
         session_start();
-        if (!empty($_POST)){
-            foreach($_POST as $key => $value) {
+        if (!empty($_POST)) {
+            foreach ($_POST as $key => $value) {
                 $cleanPost[$key] = trim($value);
             }
             $placeManager = new PlaceManager();
             $notification = ['type'=>'success','message'=>'L\'enregistrement s\'est bien effectué'];
-            if (preg_match('/-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+/',$cleanPost['coord-12'])&&
-                preg_match('/-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+/',$cleanPost['coord-19'])){
+            if (preg_match('/-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+/', $cleanPost['coord-12'])&&
+                preg_match('/-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+/', $cleanPost['coord-19'])) {
                 try {
-                    $placeManager->update($cleanPost['id'],[
+                    $placeManager->update($cleanPost['id'], [
                         'adress_day'=>$cleanPost['adress-12'],
                         'coord_day'=>$cleanPost['coord-12'],
                         'adress_evening'=>$cleanPost['adress-19'],
                         'coord_evening'=>$cleanPost['coord-19'],
                     ]);
-                }catch (\Exception $e) {
+                } catch (\Exception $e) {
                     $notification = ['type'=>'danger','message'=>$e->getMessage()];
                 }
             } else {
@@ -62,8 +62,5 @@ class PlaceAdminController extends AbstractController
             $_SESSION['notification']=$notification;
         }
         header('location:/admin/place');
-
-
-
     }
 }
