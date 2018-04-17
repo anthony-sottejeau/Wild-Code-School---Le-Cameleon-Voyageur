@@ -234,6 +234,11 @@ section:nth-child(even){
     }
 }
 
+
+.slider {
+    padding: 0;
+}
+
 .team center-team {
     display: flex;
     flex-direction: row;
