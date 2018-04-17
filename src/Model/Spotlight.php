@@ -1,9 +1,7 @@
 <?php
 
 namespace Model;
-/**
- * concue par damien
- */
+
 class Spotlight
 {
     private $id;

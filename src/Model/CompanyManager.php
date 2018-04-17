@@ -1,10 +1,11 @@
 <?php
+//created by damien with brice help
 
 namespace Model;
 
-class SpotlightManager extends AbstractManager
+class CompanyManager extends AbstractManager
 {
-    const TABLE = 'Spotlight';
+    const TABLE = 'Company';
 
     public function __construct()
     {
