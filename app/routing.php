@@ -26,5 +26,8 @@ $routes = [
     ],
     'Food' => [
         ['index', '/menu', 'GET'],
-    ]
+    ],
+    'Gallery' => [
+        ['index','/gallery', 'GET'],
+    ],
 ];
