@@ -58,11 +58,8 @@ body{
 }
 
 
-section:nth-child(odd){
-}
-
-section:nth-child(even){
-    margin-top: 10px;
+section{
+    margin-top:10px;
 }
 
 a{
