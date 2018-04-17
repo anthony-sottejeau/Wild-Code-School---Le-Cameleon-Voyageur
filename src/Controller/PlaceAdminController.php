@@ -24,12 +24,9 @@ class PlaceAdminController extends AbstractController
     public function index()
     {
         session_start();
-        if (!isset($_SESSION['notification'])) {
-            $_SESSION['notification'] = null;
-        }
         $placeManager = new PlaceManager();
         $infos = $placeManager->selectAll();
-        $notification = $_SESSION['notification'];
+        $notification = $_SESSION['notification'] ?? null;
         session_destroy();
         return $this->twig->render('admin/place.html.twig',
             ['places'=>$infos,'notification'=>$notification]);
@@ -62,5 +59,6 @@ class PlaceAdminController extends AbstractController
             $_SESSION['notification']=$notification;
         }
         header('location:/admin/place');
+        exit();
     }
 }
