@@ -9,10 +9,10 @@
 namespace Model;
 
 
-class Gallery
+class Picture
 {
     private $id;
-    private $url;
+    private $path;
     private $alt;
 
     /**
@@ -32,25 +32,25 @@ class Gallery
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getUrl() : string
+    public function getPath()
     {
-        return $this->url;
+        return $this->path;
     }
 
     /**
-     * @param mixed $url
+     * @param mixed $path
      */
-    public function setUrl($url): void
+    public function setPath($path): void
     {
-        $this->url = $url;
+        $this->path = $path;
     }
 
     /**
      * @return string
      */
-    public function getAlt() : string
+    public function getAlt() : ?string
     {
         return $this->alt;
     }

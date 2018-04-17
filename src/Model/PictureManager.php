@@ -12,9 +12,9 @@ namespace Model;
  * Class GalleryManager
  * @package Model
  */
-class GalleryManager extends AbstractManager
+class PictureManager extends AbstractManager
 {
-    const TABLE = 'gallery';
+    const TABLE = 'picture';
 
     /**
      * GalleryManager constructor.
