@@ -52,9 +52,17 @@ footer {
 
 body{
     background-color:#EEE;
-    font-size :1.5em;
-    font-family : 'Open Sans', sans-serif;
+    font-family: "Open Sans";
+    font-size: 25px;
     margin-top: 70px;
+}
+
+
+section:nth-child(odd){
+}
+
+section:nth-child(even){
+    margin-top: 10px;
 }
 
 a{
@@ -67,7 +75,7 @@ a:hover{
 
 h1{
     color:#728e20;
-    font-size: 4em;
+    font-size: 40px;
     font-family: plaza;
 }
 
@@ -89,13 +97,13 @@ h1:before{
 }
 
 h2{
-    color:#728e20;
-    font-size: 3em;
+    color:#ee7722;
+    font-size: 60px;
     font-family: plaza;
 }
 
 h2:after, h2:before{
-    color:#728e20;
+    color:#ee7722;
     font-family: 'Glyphicons Halflings';
     font-size:0.8em;
     display: inline-block;
@@ -107,7 +115,7 @@ h2:after, h2:before{
 h2:after{
     padding-left:10px;
     content: "\e079\e079\e079\e079\e079";
-    background:linear-gradient(to right,rgba(114, 142, 32, 1),rgba(114, 142, 32, 0));
+    background:linear-gradient(to right,rgba(238, 119, 34, 1),rgba(238, 119, 34, 0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -115,13 +123,13 @@ h2:after{
 h2:before{
     padding-right:20px;
     content: "\e080\e080\e080\e080\e080";
-    background:linear-gradient(to left,rgba(114, 142, 32, 1),rgba(114, 142, 32, 0));
+    background:linear-gradient(to left,rgba(238, 119, 34, 1),rgba(238, 119, 34, 0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 h3 {
-    color:#000;
+    color:#728e20;
     font-size: 2em;
     font-family: plaza;
 }
@@ -147,13 +155,6 @@ h4 {
     color:#000;
     font-size: 2em;
     font-family: plaza;
-}
-
-section:nth-child(odd){
-}
-
-section:nth-child(even){
-    margin-top: 10px;
 }
 
 
@@ -186,11 +187,10 @@ section:nth-child(even){
 }
 
 /* alert */
-.alert {
+.alert-message {
     color: white;
     font-size: 1.5em;
     background-color: #ee7722;
-
     padding: 0;
     margin: 0;
 
@@ -207,7 +207,6 @@ section:nth-child(even){
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 200px;
 }
 
 .team img {
@@ -220,11 +219,10 @@ section:nth-child(even){
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 200px;
 }
 
 .team h3{
-    color:#e72;
+    color:#728e20;
 }
 
 @media screen and (max-width: 766px) {
