@@ -23,4 +23,11 @@ class PictureManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
+
+    public function selectLimitDesc(int $limitNumber)
+    {
+        return $this->pdoConnection->query("SELECT * FROM $this->table 
+                                                      ORDER BY id DESC LIMIT $limitNumber",
+            \PDO::FETCH_CLASS, $this->className)->fetchAll();
+    }
 }

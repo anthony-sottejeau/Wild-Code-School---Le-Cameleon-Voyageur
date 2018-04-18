@@ -267,6 +267,10 @@ section:nth-child(even){
 
 /* Gallery */
 
+.gallery h2 {
+    text-align: center;
+}
+
 .gallery .modal img {
     width: 100%;
     height: 100%;
