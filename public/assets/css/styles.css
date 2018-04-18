@@ -158,6 +158,10 @@ h4 {
     font-family: plaza;
 }
 
+section:nth-child(even){
+    background-color:#ecf0f1;
+    color:black;
+}
 
 /*spotlight*/
 
@@ -189,6 +193,13 @@ h4 {
     Padding-bottom: 10px;
 }
 
+.notification {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index:10;
+}
+  
 /* alert */
 .alert-message {
     color: white;
@@ -196,9 +207,15 @@ h4 {
     background-color: #ee7722;
     padding: 0;
     margin: 0;
-
 }
 
+.alert-success {
+    color: white;
+    font-size: 1.5em;
+    background-color: #728e20;
+    padding: 0;
+    margin: 0;
+}
 /* team */
 
 .team {
