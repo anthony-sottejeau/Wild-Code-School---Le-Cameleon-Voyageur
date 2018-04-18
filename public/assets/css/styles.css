@@ -191,6 +191,10 @@ section:nth-child(even){
     Padding-bottom: 10px;
 }
 
+label{
+    font-size:20px;
+}
+
 .notification {
     top: 0;
     left: 0;
