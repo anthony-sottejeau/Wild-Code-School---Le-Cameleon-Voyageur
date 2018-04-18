@@ -42,9 +42,9 @@ class PlaceAdminController extends AbstractController
             $placeManager = new PlaceManager();
             $notification = ['type'=>'success','message'=>'L\'enregistrement s\'est bien effectué'];
             if ((preg_match('/-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+/', $cleanPost['coord-12'])
-                    ||$cleanPost['coord-12'] == '' )&&
+                    ||$cleanPost['coord-12'] == null )&&
                 (preg_match('/-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+/', $cleanPost['coord-19'])
-                    ||$cleanPost['coord-19'] == '' )) {
+                    ||$cleanPost['coord-19'] == null )) {
                 try {
                     $placeManager->update($cleanPost['id'], [
                         'adress_day'=>$cleanPost['adress-12'],
