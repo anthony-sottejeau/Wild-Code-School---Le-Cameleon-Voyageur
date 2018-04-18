@@ -131,23 +131,23 @@ h2:before{
 
 h3 {
     color:#728e20;
-    font-size: 2em;
+    font-size: 40px;
     font-family: plaza;
 }
 
-.menu h3:after,.menu h3:before{
+.menu h3:after, .menu h3:before, .day h3:before, .day h3:after{
     content: "\e044";
     font-family: 'Glyphicons Halflings';
     display: inline-block;
     padding-top:5px;
 }
 
-.menu h3:after{
+.menu h3:after, .day h3:after{
     transform: rotate(-90deg);
     padding-right: 18px;
 }
 
-.menu h3:before{
+.menu h3:before, .day h3:before{
     transform: rotate(90deg);
     padding-left: 13px;
 }
