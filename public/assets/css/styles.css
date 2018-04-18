@@ -167,13 +167,15 @@ h4 {
 }
 
 .img_spotlight{
-    margin-right: 15px
+    margin-right: 15px;
+    margin-top: 20px;
 }
 
 .text_spotlight{
     margin-top: auto; 
     margin-bottom: auto;
     padding-top: 15px;
+    text-align: left;
 }
 
 
