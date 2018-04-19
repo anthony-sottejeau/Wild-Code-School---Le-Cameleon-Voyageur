@@ -6,13 +6,19 @@
  * Time: 10:57
  */
 
-namespace Model;
+namespace Structures;
 
 
 class Notification
 {
     private $type;
     private $message;
+    private $session;
+
+    public function __construct()
+    {
+        $this->session = new Session();
+    }
 
     /**
      * @return mixed
@@ -46,15 +52,15 @@ class Notification
         $this->message = $message;
     }
 
-    public function __construct()
+    public function getNotification()
     {
-        $this->setType('succes');
-        $this->setMessage('L\'enregistrement s\'est bien effectué');
+        $notification = $this->session->get('notification');
+        $this->session->unset('notification');
+        return $notification;
     }
 
-    public function change($type, $message)
+    public function setNotification($type, $message)
     {
-        $this->setMessage($message);
-        $this->setType($type);
+        $this->session->set('notification', ['type'=>$type, 'message'=>$message]);
     }
 }

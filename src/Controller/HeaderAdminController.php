@@ -11,7 +11,8 @@ namespace Controller;
 
 use http\Exception;
 use Model\AlertManager;
-use Model\Notification;
+use Structures\Notification;
+use Structures\Session;
 
 /**
  * Class ItemController
@@ -25,24 +26,21 @@ class HeaderAdminController extends AbstractController
      */
     public function index()
     {
-        session_start();
+        $notification = (new notification())->getNotification('notification');
         $alertManager = new AlertManager();
         $alert = $alertManager->selectFirst();
-        $notification = $_SESSION['notification'] ?? null;
-        session_destroy();
         return $this->twig->render('admin/header.html.twig',
-            ['alert' => $alert,'notification'=>$notification]);
+            ['alert' => $alert,'notification' => $notification]);
     }
 
     public function editAlert()
     {
-        session_start();
         $alertManager = new AlertManager();
         if (!empty($_POST)) {
             $message = trim($_POST['alert']);
             $activated = isset($_POST['activated']);
             $notification = new Notification();
-
+            $notification->setNotification('success', 'L\'enregistrement s\'est bien déroulé');
             try {
                 if (strlen($message) > 100) {
                     throw new \Exception('Le message ne doit pas dépasser 100 caractères.');
@@ -52,9 +50,8 @@ class HeaderAdminController extends AbstractController
                     'activated' => $activated
                 ]);
             } catch (\Exception $e) {
-                $notification->change('danger', $e->getMessage());
+                $notification->setNotification('danger', $e->getMessage());
             }
-            $_SESSION['notification']=$notification;
         }
         header('location:/admin/header');
         exit();
