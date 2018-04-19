@@ -1,0 +1,36 @@
+{% extends '/admin/body.html.twig' %}
+{% block content %}
+    <section class="container gallery-admin">
+
+        <div>
+            <div class="jumbotron">
+                <form action="/admin/gallery/insert" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="file">Fichier(s)</label>
+                        <input type="file" class="form-control" name="file" id="file" placeholder="">
+                        <input type="text" class="form-control" name="alt" id="alt" placeholder="">
+                    </div>
+                    <button type="submit" name="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+        </div>
+
+
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for picture in pictures %}
+            <tr>
+                <td><img src="../{{ picture.path }}" alt="{{ picture.alt }}"></td>
+                <td>{{ picture.alt }}</td>
+                <td><a href="/admin/gallery/delete/{{ picture.id }}"><button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Supprimer</button></a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}
