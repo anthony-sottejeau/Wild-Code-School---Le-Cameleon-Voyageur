@@ -1,11 +1,12 @@
 .hour{
     font-weight: bold;
-    margin-left:50px;
+    margin-left:10px;
 }
 
 .places-map{
     height: 70vh;
     margin-bottom:50px;
+    margin-top:40px;
 }
 
 h3{
