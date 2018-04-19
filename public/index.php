@@ -5,7 +5,6 @@
  * Date: 11/10/17
  * Time: 14:01
  */
-//require_once '../src/Structures/Notification.php';
 session_start();
 
 if (preg_match('/\.(?:png|jpg|jpeg|gif)$/', $_SERVER["REQUEST_URI"])) {
