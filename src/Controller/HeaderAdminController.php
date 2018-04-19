@@ -9,7 +9,9 @@
 
 namespace Controller;
 
+use http\Exception;
 use Model\AlertManager;
+use Model\Notification;
 
 /**
  * Class ItemController
@@ -38,24 +40,19 @@ class HeaderAdminController extends AbstractController
         $alertManager = new AlertManager();
         if (!empty($_POST)) {
             $message = trim($_POST['alert']);
-            if (isset($_POST['activated'])){
-                $activated = true;
-            } else {
-                $activated = false;
-            }
-            $notification = ['type'=>'success','message'=>'L\'enregistrement s\'est bien effectué'];
+            $activated = isset($_POST['activated']);
+            $notification = new Notification();
 
-            if (strlen($message) < 100) {
-                try {
-                    $alertManager->update(1, [
-                        'alert'=>$message,
-                        'activated' => $activated
-                    ]);
-                } catch (\Exception $e) {
-                    $notification = ['type'=>'danger','message'=>$e->getMessage()];
+            try {
+                if (strlen($message) > 100) {
+                    throw new \Exception('Le message ne doit pas dépasser 100 caractères.');
                 }
-            } else {
-                $notification = ['type' => 'danger', 'message' => 'Le message ne doit pas depasser 100 caractères'];
+                $alertManager->update(1, [
+                    'alert'=>$message,
+                    'activated' => $activated
+                ]);
+            } catch (\Exception $e) {
+                $notification->change('danger', $e->getMessage());
             }
             $_SESSION['notification']=$notification;
         }
