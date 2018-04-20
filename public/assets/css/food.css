@@ -1,17 +1,11 @@
 h2 {
-    color: #728e20;
-    font-size: 3em;
+    color: #ee7722;
 }
 p {
     font-family: "Open Sans";
-    font-size: 1.5em;
 }
 h3 {
-    color: #ee7722;
-    font-size: 2.5em;
-}
-h4 {
-    font-size: 2em;
+    color: #728e20;
 }
 
 @media screen and (max-width: 500px) {

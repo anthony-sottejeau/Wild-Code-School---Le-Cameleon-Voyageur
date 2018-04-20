@@ -85,12 +85,26 @@ abstract class AbstractManager
 
 
     /**
-     * @param int   $id   Id of the row to update
-     * @param array $data $data to update
+     * @param array $id
+     *    un tableau avec le nom de l'id en clé et l'id en valeur
+     * @param array $data
+     *    un tableau avec la colone en clé et la valeur en valeur
      */
     public function update(int $id, array $data)
     {
-        //TODO : Implements SQL UPDATE request
+        $query = "UPDATE $this->table SET ";
+        foreach($data as $key=>$value){
+            $queryParts[] = $key . "=:" . $key;
+        }
+        $query .= implode(', ', $queryParts); // on retire la virgule en trop pour la requete
+        $query .= " WHERE id=:id";
+
+        $statement = $this->pdoConnection->prepare($query);
+        $statement->bindValue('id', $id);
+        foreach($data as $key=>$value){
+            $statement->bindValue($key, $value);
+        }
+        $statement->execute();
     }
 
 

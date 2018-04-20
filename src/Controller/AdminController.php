@@ -9,6 +9,7 @@
 
 namespace Controller;
 
+use Model\PlaceManager;
 
 /**
  * Class ItemController

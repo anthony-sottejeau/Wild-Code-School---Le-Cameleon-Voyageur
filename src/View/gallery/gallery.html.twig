@@ -1,0 +1,33 @@
+{% extends 'main/body.html.twig' %}
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" media="screen" href="assets/css/gallery.css">
+{% endblock %}
+{% block content %}
+    <section class="gallery-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>Galerie d'images</h2>
+                </div>
+                {% for picture in pictures %}
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 gallery-item">
+                        <a data-toggle="modal" data-target="#galleryModal{{ loop.index }}">
+                            <img src="{{ picture.path}} " alt="{{ picture.alt }}">
+                        </a>
+                    </div>
+
+                    <div class="modal" id="galleryModal{{ loop.index }}" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <img src="{{ picture.path }}" alt="{{ picture.alt }}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
