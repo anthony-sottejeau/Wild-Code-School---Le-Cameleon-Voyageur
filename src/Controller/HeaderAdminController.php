@@ -45,7 +45,8 @@ class HeaderAdminController extends AbstractController
                 if (strlen($message) > 100) {
                     throw new \Exception('Le message ne doit pas dépasser 100 caractères.');
                 }
-                $alertManager->update(1, [
+                $alert = $alertManager->selectFirst();
+                $alertManager->update($alert->getId(), [
                     'alert'=>$message,
                     'activated' => $activated
                 ]);
