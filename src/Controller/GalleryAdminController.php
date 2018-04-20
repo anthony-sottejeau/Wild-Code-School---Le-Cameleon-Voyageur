@@ -31,15 +31,15 @@ class GalleryAdminController extends AbstractController
         session_start();
         if(isset($_POST['submit'])) {
             if(in_array($_FILES['file']['type'],self::MIME_AUTHORIZED)) {
-            $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
-            $filename = uniqid() . '.' . $extension;
-            $filePath = "assets/images/" . self::DIRECTORY . $filename;
-            move_uploaded_file($_FILES['file']['tmp_name'], '../public/' . $filePath);
-            $pictureManager = new PictureManager();
-            $pictureManager->insert([
-                'path'=>$filePath,
-                'alt'=>$_POST['alt'],
-            ]);
+                $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+                $filename = uniqid() . '.' . $extension;
+                $filePath = "assets/images/" . self::DIRECTORY . $filename;
+                move_uploaded_file($_FILES['file']['tmp_name'], '../public/' . $filePath);
+                $pictureManager = new PictureManager();
+                $pictureManager->insert([
+                    'path'=>$filePath,
+                    'alt'=>$_POST['alt'],
+                ]);
             } else {
                 $notification = ['type'=>'danger', 'message'=>"Vous devez choisir une image [ png, jpeg, gif ]"];
             }
