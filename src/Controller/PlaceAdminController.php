@@ -23,7 +23,6 @@ class PlaceAdminController extends AbstractController
      */
     public function index()
     {
-        session_start();
         $placeManager = new PlaceManager();
         $infos = $placeManager->selectAll();
         $notification = $_SESSION['notification'] ?? null;
@@ -34,7 +33,6 @@ class PlaceAdminController extends AbstractController
 
     public function edit()
     {
-        session_start();
         if (!empty($_POST)) {
             foreach ($_POST as $key => $value) {
                 $cleanPost[$key] = trim($value);

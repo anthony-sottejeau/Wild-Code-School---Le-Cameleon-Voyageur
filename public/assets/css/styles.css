@@ -201,6 +201,10 @@ section:nth-child(even){
     Padding-bottom: 10px;
 }
 
+label{
+    font-size:20px;
+}
+
 .notification {
     top: 0;
     left: 0;
@@ -209,13 +213,15 @@ section:nth-child(even){
 }
   
 /* alert */
-.alert-message {
+.alert-message, .alert-danger {
     color: white;
     font-size: 1.5em;
     background-color: #ee7722;
     padding: 0;
     margin: 0;
 }
+
+
 
 .alert-success {
     color: white;
