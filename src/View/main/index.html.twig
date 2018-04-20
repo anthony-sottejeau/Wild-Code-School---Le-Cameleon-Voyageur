@@ -1,12 +1,9 @@
 {% extends 'main/body.html.twig' %}
-
 {% block content %}
     {% include 'main/alert.html.twig' %}
     {% include 'main/slider.html.twig' %}
-    <section id="alert"></section>
-    <section id="header"></section>
+    {% include 'main/concept.html.twig' %}
     {% include 'main/spotlight.html.twig' %}
-    <section id="concept"></section>
     {% include 'main/team.html.twig' %}
-    <section id="gallerie"></section>
+    {% include 'main/gallery.html.twig' %}
 {% endblock %}
