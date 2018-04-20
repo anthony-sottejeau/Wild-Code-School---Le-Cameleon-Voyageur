@@ -49,19 +49,22 @@ class GalleryAdminController extends AbstractController
         exit;
     }
 
-    public function delete(int $id) {
+    public function delete() {
         session_start();
-        $pictureManager = new PictureManager();
-        $picture = $pictureManager->selectOneById($id);
-        if(empty($picture)) {
-            $notification = ['type'=>'danger', 'message'=>"L'image n'existe pas"];
-        } else {
-            unlink('../public/' . $picture->getPath());
-            $pictureManager->delete($id);
-            $notification = ['type'=>'success', 'message'=>"Suppression de l'image réussi"];
+        if(isset($_POST['id'])) {
+            $id = $_POST['id'];
+            $pictureManager = new PictureManager();
+            $picture = $pictureManager->selectOneById($id);
+            if (empty($picture)) {
+                $notification = ['type' => 'danger', 'message' => "L'image n'existe pas"];
+            } else {
+                unlink('../public/' . $picture->getPath());
+                $pictureManager->delete($id);
+                $notification = ['type' => 'success', 'message' => "Suppression de l'image réussi"];
+            }
+            $_SESSION['notification'] = $notification;
+            header('Location:/admin/gallery');
+            exit;
         }
-        $_SESSION['notification']=$notification;
-        header('Location:/admin/gallery');
-        exit;
     }
 }
