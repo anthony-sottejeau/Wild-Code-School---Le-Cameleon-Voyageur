@@ -10,7 +10,7 @@
     {{ parent() }}
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
                 <h2>Où nous trouver?</h2>
             </div>
         </div>
@@ -24,12 +24,16 @@
                             </h3>
                         </div>
                         <div>
-                            <span class="hour">12h-14h :</span>
-                            <span id="{{ place.day }}_12h-14h" data="{{ place.coord_day }}" class="marker">{{ place.adress_day }}</span>
+                            <span class="hour"><span class="glyphicon glyphicon-map-marker"></span>12h-14h :</span>
+                            <span id="{{ place.day }}_12h-14h" data="{{ place.coord_day }}" class="marker">
+                                {{ place.adress_day ? place.adress_day : 'Le foodtruck n\'est pas disponible' }}
+                            </span>
                         </div>
                         <div>
-                            <span class="hour">19h-21h :</span>
-                            <span id="{{ place.day }}_19h-21h" data="{{ place.coord_evening }}" class="marker">{{ place.adress_evening }}</span>
+                            <span class="hour"><span class="glyphicon glyphicon-map-marker"></span>19h-21h :</span>
+                            <span id="{{ place.day }}_19h-21h" data="{{ place.coord_evening }}" class="marker">
+                                  {{ place.adress_evening ? place.adress_evening : 'Le foodtruck n\'est pas disponible' }}
+                            </span>
                         </div>
                     {% endif %}
                 {% endfor %}
