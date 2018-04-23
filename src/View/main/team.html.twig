@@ -4,7 +4,9 @@
             <div class="text-center col-xs-12">
                 <h2>L'équipe</h2>
             </div>
-            {% for teamMate in team %}
+        </div>
+        {% for teamMate in team %}
+            <div class="row">
                 <div class="col-xs-12 col-sm-3 img-container {{ loop.index is not odd ? 'col-sm-push-9' }}">
                     <img class="img-responsive img-circle" src="{{ teamMate.picture }}" alt="{{ teamMate.name }}">
                 </div>
@@ -13,8 +15,8 @@
                         <h3 class="{{ loop.index is not odd ? 'text-right' }}">{{ teamMate.name }}</h3>
                         <p class="{{ loop.index is not odd ? 'text-right' }}">{{ teamMate.description }}</p>
                     </div>
-                {% endfor %}
                 </div>
             </div>
-        </div>
+        {% endfor %}
+    </div>
 </section>
