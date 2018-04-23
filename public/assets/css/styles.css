@@ -306,13 +306,28 @@ label{
 
 /* Gallery */
 
-.gallery h2 {
-    text-align: center;
+.gallery a img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+    margin: 6px;
+}
+
+.gallery a img:hover{
+    border: 1px solid green;
 }
 
 .gallery .modal img {
     width: 100%;
-    height: 100%;
+}
+
+.gallery .img-container {
+    padding: 3px;
+    margin: 0;
+}
+
+.gallery img.image-responsive {
+    margin: 1px;
 }
 
 .gallery .button-container{
@@ -321,26 +336,15 @@ label{
 
 .gallery .button-container a {
     background-color: #728e20;
+    font-size: 1em;
     color: white;
     width: 250px;
-    height: 40px;
+    height: 50px;
+    margin-top: 12px;
 }
 
-.gallery .thumbnail {
-    overflow: hidden;
-    height: 260px;
-    width:100%;
-    display: inline-block;
-}
-
-.gallery .thumbnail img {
-    height:100%;
-    object-fit: cover;
- }
-
-
-a.thumbnail:hover {
-    border: 1px #728e20 solid;
+.gallery .button-container a:hover {
+    background-color: #ee7722;
 }
 
 /*admin*/
