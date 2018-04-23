@@ -126,12 +126,9 @@ section:nth-child(even){
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    /*height: 200px;*/
 }
 
 .team img {
-    /*width: 100%;*/
-    /*max-width: 180px;*/
     max-height: 200px ;
     border: solid 2px rgba(48, 48, 48, 0.64);
     object-fit: cover;
