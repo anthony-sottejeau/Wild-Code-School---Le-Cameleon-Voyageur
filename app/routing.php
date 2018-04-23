@@ -34,4 +34,9 @@ $routes = [
     'Gallery' => [
         ['index','/gallery', 'GET'],
     ],
+    'GalleryAdmin' => [
+        ['index', '/admin/gallery', 'GET'],
+        ['insert', '/admin/gallery/insert', 'POST'],
+        ['delete', '/admin/gallery/delete/', 'POST'],
+    ],
 ];
