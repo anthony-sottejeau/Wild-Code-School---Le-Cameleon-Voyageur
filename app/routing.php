@@ -13,7 +13,25 @@ $routes = [
     'Main' => [ // Controller
         ['index', '/', 'GET'], // action, url, method    ],
     ],
+    'HeaderAdmin' => [
+        ['index', '/admin/header','GET'],
+        ['editAlert', '/admin/header/editAlert','POST'],
+    ],
     'Place' => [
         ['index', '/lieux','GET'],
-    ]
+    ],
+    'Admin' => [
+        ['index', '/admin','GET'],
+    ],
+    'PlaceAdmin' => [
+        ['index', '/admin/place','GET'],
+        ['edit', '/admin/place/edit','POST'],
+        ['edit', '/admin/place/edit','GET'],
+    ],
+    'Food' => [
+        ['index', '/menu', 'GET'],
+    ],
+    'Gallery' => [
+        ['index','/gallery', 'GET'],
+    ],
 ];

@@ -1,7 +1,16 @@
-
 {% extends 'layout.html.twig' %}
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" media="screen" href="assets/css/navbar.css">
+    <link rel="stylesheet" media="screen" href="assets/css/footer.css">
+{% endblock %}
 {% block body %}
     {% include 'include/navbar.html.twig' %}
-    {% block content %}{%  endblock %}
+    {% block content %}
+    {%  endblock %}
     {% include 'include/footer.html.twig' %}
+{% endblock %}
+{% block javascript %}
+    {{ parent() }}
+    <script src="assets/js/freme.js"></script>
 {% endblock %}
