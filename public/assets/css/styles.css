@@ -351,3 +351,16 @@ a.thumbnail:hover {
 .admin-footer{
     background-color:transparent;
 }
+/* slider */
+.imgs-slider {
+    object-fit: cover;
+    max-height: 400px;
+    min-height: 400px;
+    width: 100%;
+}
+.img-slider {
+    object-fit: cover;
+    max-height: 250px;
+    min-height: 250px;
+    width: 100%;
+}
