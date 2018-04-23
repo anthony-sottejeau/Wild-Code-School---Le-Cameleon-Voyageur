@@ -1,4 +1,10 @@
 {% extends 'layout.html.twig' %}
+{% block stylesheet %}
+    {{ parent() }}
+
+    <link rel="stylesheet" media="screen" href="/assets/css/teamAdmin.css">
+
+{% endblock %}
 
 {% block body %}
     {% if notification.type is not empty %}
@@ -28,6 +34,7 @@
                             <li><a data-toggle="tab" href="#header">Présentation</a></li>
                             <li><a data-toggle="tab" href="#galerie">Galerie</a></li>
                             <li><a href="/admin/place">Où nous trouver</a></li>
+                            <li><a href="/admin/team">Équipe</a></li>
                             <li><a data-toggle="tab" href="#menus">Menus</a></li>
 
                         </ul>

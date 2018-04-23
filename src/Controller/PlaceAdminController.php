@@ -36,6 +36,7 @@ class PlaceAdminController extends AbstractController
     {
         session_start();
         if (!empty($_POST)) {
+
             foreach ($_POST as $key => $value) {
                 $cleanPost[$key] = trim($value);
             }

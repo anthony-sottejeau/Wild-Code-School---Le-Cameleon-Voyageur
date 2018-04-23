@@ -1,0 +1,11 @@
+
+.small {
+    font-size: 0.7rem;
+    color: #EE7722;
+    margin-bottom: 10px;
+}
+.thumbnail img{
+    width: auto;
+    height: 125px;
+}
+
