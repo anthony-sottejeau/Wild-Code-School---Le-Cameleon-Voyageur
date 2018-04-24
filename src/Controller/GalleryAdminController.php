@@ -9,7 +9,7 @@
 namespace Controller;
 
 use Model\PictureManager;
-use Structures\File;
+use Structures\Upload;
 use Structures\Notification;
 
 class GalleryAdminController extends AbstractController
@@ -26,8 +26,12 @@ class GalleryAdminController extends AbstractController
     public function insert()
     {
         if(isset($_POST['submit'])) {
-            $file = new File('gallery', new PictureManager());
-            $file->add($_FILES);
+            $pictureManager = new PictureManager();
+            $upload = new Upload('gallery');
+            $path = $upload->add($_FILES['file']);
+            if($path) {
+                $pictureManager->insert(['path'=>$path, 'alt'=>$_POST['alt']]);
+            }
         }
         header('Location:/admin/gallery');
         exit;
@@ -36,8 +40,12 @@ class GalleryAdminController extends AbstractController
     public function delete()
     {
         if(isset($_POST['id'])) {
-            $file = new File('gallery', new PictureManager());
-            $file->delete($_POST['id']);
+            $pictureManager = new PictureManager();
+            $file = new Upload('gallery');
+            $pictureObject = $pictureManager->selectOneById($_POST['id']);
+            if($file->delete($pictureObject)) {
+                $pictureManager->delete($_POST['id']);
+            }
             header('Location:/admin/gallery');
             exit;
         }

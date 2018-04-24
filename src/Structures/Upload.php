@@ -8,19 +8,17 @@
 
 namespace Structures;
 
-use Model\PictureManager;
 
-
-class File
+class Upload
 {
     private const MIME_AUTHORIZED = ['image/png', 'image/gif', 'image/jpeg'];
-    private $manager;
+    private const MAX_SIZE = '1000000';
+
     private $directory;
 
-    public function __construct(string $directory, PictureManager $manager)
+    public function __construct(string $directory)
     {
         $this->setDirectory($directory);
-        $this->setManager($manager);
     }
 
     /**
@@ -29,32 +27,36 @@ class File
     public function add(array $file)
     {
         $notification = new Notification();
-        if(in_array($file['file']['type'],self::MIME_AUTHORIZED)) {
-            $extension = pathinfo($file['file']['name'], PATHINFO_EXTENSION);
-            $filename = uniqid() . '.' . $extension;
-            $filePath = "assets/images/" . $this->directory . $filename;
-            move_uploaded_file($file['file']['tmp_name'], '../public/' . $filePath);
-            $this->manager->insert([
-                'path'=>$filePath,
-                'alt'=>$_POST['alt'],
-            ]);
-            $notification->setNotification('success', 'Ajout de fichier réussi');
+        if (in_array($file['type'], self::MIME_AUTHORIZED)) {
+            if (filesize($file['tmp_name']) < self::MAX_SIZE) {
+                $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
+                $filename = uniqid() . '.' . $extension;
+                $filePath = "assets/images/" . $this->directory . $filename;
+                move_uploaded_file($file['tmp_name'], '../public/' . $filePath);
+                $notification->setNotification('success', 'Ajout de fichier réussi');
+                return $filePath;
+            } else {
+                $notification->setNotification('danger', 'Taille du fichier supérieur à 1 Mo');
+                return false;
+            }
         } else {
             $notification->setNotification('danger', 'Format de fichier non autorisé');
+            return false;
         }
     }
 
     /**
      * @param int $id
      */
-    public function delete(int $id)
+    public function delete($file): bool
     {
         $notification = new Notification();
-        $file = $this->manager->selectOneById($id);
         if (!empty($file)) {
             unlink('../public/' . $file->getPath());
-            $this->manager->delete($id);
-            $notification->setNotification('success', 'Suppression de fichier réussi');
+            $notification->setNotification('success', 'Suppression du fichier réussi');
+            return true;
+        } else {
+            return false;
         }
     }
 
