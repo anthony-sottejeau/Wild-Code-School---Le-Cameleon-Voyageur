@@ -4,5 +4,5 @@
 app/db.php
 .idea/
 
-/public/assets/images/john.jpg
-/public/assets/images/sylvain.jpg
+/public/assets/upload
+!.gitkeep
