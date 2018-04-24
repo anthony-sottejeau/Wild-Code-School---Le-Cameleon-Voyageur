@@ -2,52 +2,8 @@
 .title_concept{
     text-align: center;
 }
-
 .text_concept{
     text-align: center;
-}
-
-.icons {
-    padding-right: 0;
-    padding-left:  0;
-    margin-top: 15px;
-}
-
-.list-inline img {
-    width: 24px;
-    height: 24px;
-}
-footer ul {
-    font-size: 0.8em;
-    margin-top: 10px;
-}
-
-footer p {
-    color: #C5C1C2;
-    font-size: 0.8em;
-    margin: 0;
-    padding: 0;
-}
-
-.listlink a{
-    padding: 0px;
-    margin: 0px;
-    color: #C5C1C2 ;
-}
-
-footer {
-    background-color:black;
-}
-
-.face {
-    float: right;
-    max-height: 20%;
-}
-
-.face img {
-    width: 40%;
-    height: auto;
-    padding: 10px;
 }
 @font-face {
     font-family: plaza;
@@ -55,19 +11,16 @@ footer {
     font-weight: normal;
     font-style: normal;
 }
-
 body{
     background-color:#F3F3F3;
     font-family: "Open Sans";
     font-size: calc(15px + 0.5vw);
     margin-top: 70px;
 }
-
 section{
     padding-top:10px;
     padding-bottom:10px;
 }
-
 a{
     color:#E72;
 }
