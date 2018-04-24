@@ -41,11 +41,9 @@ class GalleryAdminController extends AbstractController
     {
         if(isset($_POST['id'])) {
             $pictureManager = new PictureManager();
-            $file = new Upload('gallery');
-            $pictureObject = $pictureManager->selectOneById($_POST['id']);
-            if($file->delete($pictureObject)) {
-                $pictureManager->delete($_POST['id']);
-            }
+            $upload = new Upload('gallery');
+            $upload->delete(($pictureManager->selectOneById($_POST['id']))->getPath());
+            $pictureManager->delete($_POST['id']);
             header('Location:/admin/gallery');
             exit;
         }

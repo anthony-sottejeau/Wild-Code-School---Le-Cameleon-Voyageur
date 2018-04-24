@@ -27,36 +27,30 @@ class Upload
     public function add(array $file)
     {
         $notification = new Notification();
-        if (in_array($file['type'], self::MIME_AUTHORIZED)) {
-            if (filesize($file['tmp_name']) < self::MAX_SIZE) {
-                $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
-                $filename = uniqid() . '.' . $extension;
-                $filePath = "assets/images/" . $this->directory . $filename;
-                move_uploaded_file($file['tmp_name'], '../public/' . $filePath);
-                $notification->setNotification('success', 'Ajout de fichier réussi');
-                return $filePath;
-            } else {
-                $notification->setNotification('danger', 'Taille du fichier supérieur à 1 Mo');
-                return false;
-            }
-        } else {
+        if (!in_array($file['type'], self::MIME_AUTHORIZED)) {
             $notification->setNotification('danger', 'Format de fichier non autorisé');
-            return false;
+        } elseif (filesize($file['tmp_name']) > self::MAX_SIZE) {
+            $notification->setNotification('danger', 'Taille du fichier supérieur à 1 Mo');
+        } else {
+            $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
+            $filename = uniqid() . '.' . $extension;
+            $filePath = "assets/images/" . $this->directory . $filename;
+            move_uploaded_file($file['tmp_name'], '../public/' . $filePath);
+            $notification->setNotification('success', 'Ajout de fichier réussi');
+            return $filePath;
         }
     }
 
     /**
      * @param int $id
      */
-    public function delete($file): bool
+    public function delete(string $path): bool
     {
         $notification = new Notification();
-        if (!empty($file)) {
-            unlink('../public/' . $file->getPath());
+        if (file_exists($path)) {
+            unlink('../public/' . $path);
             $notification->setNotification('success', 'Suppression du fichier réussi');
             return true;
-        } else {
-            return false;
         }
     }
 
