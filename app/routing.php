@@ -21,6 +21,8 @@ $routes = [
     'HeaderAdmin' => [
         ['index', '/admin/header','GET'],
         ['editAlert', '/admin/header/editAlert','POST'],
+        ['addImage', '/admin/header/addImage','POST'],
+        ['deleteImage', '/admin/header/deleteImage','POST'],
 
     ],
     'Place' => [
