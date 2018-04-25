@@ -13,6 +13,11 @@ $routes = [
     'Main' => [ // Controller
         ['index', '/', 'GET'], // action, url, method    ],
     ],
+    'CompanyAdmin' => [
+        ['index', '/admin/company','GET'],
+        ['edit', '/admin/company/edit','POST'],
+        ['edit', '/admin/company/edit','GET'],
+    ],
     'Place' => [
         ['index', '/lieux','GET'],
     ],

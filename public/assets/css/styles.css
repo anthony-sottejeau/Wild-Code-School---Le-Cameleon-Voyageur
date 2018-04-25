@@ -306,3 +306,9 @@ a.thumbnail:hover {
 .admin-footer{
     background-color:transparent;
 }
+
+.title_admin_comp {
+    color:#728e20;
+    font-size: 1em;
+    font-family: plaza;
+}
