@@ -36,7 +36,6 @@ class SpotlightAdminController extends AbstractController
 
     public function editSpotlight()
     {
-        var_dump($_FILES['photo']);
         $spotlightManager = new spotlightManager();
         if (!empty($_POST)) {
             foreach ($_POST as $key => $value) {
