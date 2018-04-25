@@ -117,4 +117,11 @@ abstract class AbstractManager
     {
         return $this->pdoConnection->query('SELECT * FROM ' . $this->table . ' LIMIT 1 ', \PDO::FETCH_CLASS, $this->className)->fetch();
     }
+
+
+
+    public function selectFirstWithLimit($offset=0, $limit=1)
+    {
+      return $this->pdoConnection->query('SELECT * FROM ' . $this->table . ' LIMIT ' . $offset . ',' . $limit, \PDO::FETCH_CLASS, $this->className)->fetch();
+    }
 }

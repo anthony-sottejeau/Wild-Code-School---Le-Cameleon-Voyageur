@@ -20,8 +20,8 @@ class TeamAdminController extends AbstractController
     {
         session_start();
         $teamManager = new TeamManager();
-        $infos1 = $teamManager->selectOneById(1);
-        $infos2 = $teamManager->selectOneById(2);
+        $infos1 = $teamManager->selectFirstWithLimit();
+        $infos2 = $teamManager->selectFirstWithLimit(1,2);
         $notification = $_SESSION['notification'] ?? null;
         session_destroy();
         return $this->twig->render('admin/team.html.twig', ['team1'=>$infos1,'team2'=>$infos2,'notification'=>$notification]);
@@ -30,72 +30,56 @@ class TeamAdminController extends AbstractController
     public function edit()
     {
         session_start();
-        if (!empty($_POST)) {
-            foreach ($_POST as $key => $value) {
-                $cleanPost[$key] = trim($value);
-                if(!empty($cleanPost[$key])){
-                    $allPost[$key]=$value;
-                }
-            }
-            $teamManager = new TeamManager();
-            $extension1 = pathinfo($_FILES['picture1']['name'], PATHINFO_EXTENSION);
-            $extension2 = pathinfo($_FILES['picture2']['name'], PATHINFO_EXTENSION);
-            $filename1 = uniqid() . '.' . $extension1;
-            $filename2 = uniqid() . '.' . $extension2;
-            $photos =['image/png', 'image/gif', 'image/jpeg','image/jpg'];
-            $filePath = "../public/assets/images/";
-            $notification = ['type'=>'success','message'=>'L\'enregistrement s\'est bien effectué'];
-            if (!empty($allPost)) {
-                try {
-                    switch($allPost)
+        $teamManager = new TeamManager();
+        if (!empty($_POST))
+        {
+            if ($_POST['personne'] == 'personne1')
+            {
+                foreach ($_POST as $key => $value)
+                {
+                    if($key!="personne")
                     {
-                        case (isset($allPost['name1'])):
-                            $teamManager->update(1, [
-                                'name'=>$allPost['name1']]);
-                        case (isset($allPost['pictureDescription1'])):
-                            $teamManager->update(1, [
-                                'pictureDescription'=>$allPost['pictureDescription1']]);
-                        case (isset($allPost['description1'])):
-                            $teamManager->update(1, [
-                                'description'=>$allPost['description1']]);
-                        case (isset($allPost['name2'])):
-                            $teamManager->update(2, [
-                                'name'=>$allPost['name2']]);
-                        case (isset($allPost['pictureDescription2'])):
-                            $teamManager->update(2, [
-                                'pictureDescription'=>$allPost['pictureDescription2']]);
-                        case (isset($allPost['description2'])):
-                            $teamManager->update(2, [
-                                'description'=>$allPost['description2']]);
+                        $cleanPost[$key] = trim($value);
                     }
-                    if($_FILES['picture1']["error"]==0){
-                        if(in_array($_FILES['picture1']['type'],$photos)) {
-                            move_uploaded_file($_FILES['picture1']['tmp_name'],$filePath.$filename1);
-                            $teamManager->update(1,['picture'=>'/assets/images/'.$filename1]);
-                        }
-                        else {
-                            $notification = ['type'=>'danger', 'message'=>"Vous devez choisir une image [ png, jpeg, gif ]"];
-                        }
+                }
+                try
+                {
+                    foreach ($cleanPost as $key => $value)
+                    {
+                        $teamManager->update(1, [$key => $cleanPost[$key]]);
                     }
-                    if($_FILES['picture2']["error"]==0){
-                        if(in_array($_FILES['picture2']['type'],$photos)){
-                            move_uploaded_file($_FILES['picture2']['tmp_name'],$filePath.$filename2);
-                            $teamManager->update(2,['picture'=>'/assets/images/'.$filename2]);
-                        }
-                        else {
-                            $notification = ['type'=>'danger', 'message'=>"Vous devez choisir une image [ png, jpeg, gif ]"];
-                        }
-                    }
-                } catch (\Exception $e) {
+                }
+                catch (\Exception $e)
+                {
                     $notification = ['type'=>'danger','message'=>$e->getMessage()];
                 }
-            } else {
-
-                $notification = ['type' => 'danger', 'message' => 'Les coordonnées ne sont pas valides'];
+             }
             }
-            $_SESSION['notification']=$notification;
+            if ($_POST['personne'] == 'personne2')
+            {
+                foreach ($_POST as $key => $value)
+                {
+                    if($key!="personne")
+                    {
+                        $cleanPost[$key] = trim($value);
+                    }
+                }
+                try {
+                    foreach ($cleanPost as $key => $value)
+                    {
+                        $teamManager->update(2, [$key => $cleanPost[$key]]);
+                    }
+                }
+                catch (\Exception $e)
+                {
+                    $notification = ['type'=>'danger','message'=>$e->getMessage()];
+                }
         }
+        else
+        {
 
+            $notification = ['type' => 'danger', 'message' => 'Les coordonnées ne sont pas valides'];
+        }
         header('location:/admin/team');
         exit();
     }
