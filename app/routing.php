@@ -16,8 +16,7 @@ $routes = [
 
     'CompanyAdmin' => [
         ['index', '/admin/company','GET'],
-        ['edit', '/admin/company/edit','POST'],
-        ['edit', '/admin/company/edit','GET'],
+        ['edit', '/admin/company/edit','POST','GET'],
     ],
     'HeaderAdmin' => [
         ['index', '/admin/header','GET'],
