@@ -17,6 +17,10 @@ $routes = [
         ['index', '/admin/header','GET'],
         ['editAlert', '/admin/header/editAlert','POST'],
     ],
+    'SpotlightAdmin' => [
+        ['index', '/admin/spotlight', 'GET'],
+        ['editSpotlight', '/admin/editspotlight', 'POST'],
+    ],
     'Place' => [
         ['index', '/lieux','GET'],
     ],
