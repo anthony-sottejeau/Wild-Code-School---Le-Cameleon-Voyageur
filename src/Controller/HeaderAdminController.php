@@ -57,4 +57,42 @@ class HeaderAdminController extends AbstractController
         header('location:/admin/header');
         exit();
     }
+
+    public function addImage()
+    {
+        $sliderManager = new SliderManager();
+        $file = new File();
+        if (!empty($_POST)) {
+            foreach ($_POST as $key => $value) {
+                $cleanPost[$key] = trim($value);
+            }
+            $imageName = $cleanPost['picture'];
+            $notification = new Notification();
+            $notification->setNotification('success', 'L\'enregistrement s\'est bien déroulé');
+            $sliderManager->insert([
+                'picture'=>'/assets/images/slider/'.$imageName,
+                'alt' => $cleanPost['alt']
+            ]);
+            $file->add();
+        }
+        header('location:/admin/header');
+        exit();
+    }
+
+    public function deleteImage()
+    {
+        $sliderManager = new SliderManager();
+        if (!empty($_POST)) {
+            $notification = new Notification();
+            $notification->setNotification('success', 'L\'enregistrement s\'est bien déroulé');
+            try {
+                $sliderManager->delete($_POST['id']);
+            } catch (\Exception $e) {
+                $notification->setNotification('danger', $e->getMessage());
+            }
+        }
+        header('location:/admin/header');
+        exit();
+    }
+
 }
