@@ -44,7 +44,7 @@ class Upload
     /**
      * @param int $id
      */
-    public function delete(string $path): bool
+    public function delete(string $path)
     {
         $notification = new Notification();
         if (file_exists($path)) {
