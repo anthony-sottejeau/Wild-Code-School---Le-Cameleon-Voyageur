@@ -110,11 +110,11 @@ class FoodAdminController extends AbstractController
     public function deleteProduct()
     {
         $foodManager = new FoodManager();
-        $id = $_POST['id'];
+        $id = trim($_POST['id']);
         $notification = new Notification();
-        $notification->setNotification('success', 'L\'enregistrement s\'est bien déroulé');
+        $notification->setNotification('success', 'La suppression s\'est bien déroulée');
         try {
-            if (empty($id)) {
+            if (empty($id) OR empty($foodManager->selectFirst($id))) {
                 throw new \Exception('Le produit n\'existe pas');
             }
             $foodManager->delete($id);
@@ -128,11 +128,11 @@ class FoodAdminController extends AbstractController
     public function deleteCategory()
     {
         $categoryManager = new CategoryManager();
-        $id = $_POST['id'];
+        $id = trim($_POST['id']);
         $notification = new Notification();
-        $notification->setNotification('success', 'L\'enregistrement s\'est bien déroulé');
+        $notification->setNotification('success', 'La suppression s\'est bien déroulée');
         try {
-            if (empty($id)) {
+            if (empty($id) OR empty($categoryManager->selectFirst($id))) {
                 throw new \Exception('La categorie n\'existe pas');
             }
             $categoryManager->delete($id);
