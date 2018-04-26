@@ -74,7 +74,6 @@ abstract class AbstractManager
         $statement->execute();
     }
 
-
     /**
      * INSERT one row in database
      *
@@ -86,7 +85,6 @@ abstract class AbstractManager
         foreach($data as $key=>$value){
             $queryKey[] = $key;
         }
-
         $query .= implode(', ', $queryKey);
         $query .= ') VALUES (:';
         $query .= implode(', :', $queryKey);
