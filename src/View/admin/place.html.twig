@@ -21,7 +21,7 @@
                     <form action="/admin/place/edit" method="POST">
                         <input type="hidden" name="id" value="{{ place.id }}"/>
                         <div class="row">
-                            <div class="col-xs-6">
+                            <div class="col-xs-12 col-sm-6">
                                 <span class="hour">12h-14h :</span>
                                 <div class="form-group">
                                     <label for="{{ place.day }}-adress-12">Adresse</label>
@@ -35,7 +35,7 @@
                                            pattern="-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+" placeholder="1.23456789, 1.23456789" title="Veuillez entrer des coordonées valides"/>
                                 </div>
                             </div>
-                            <div class="col-xs-6">
+                            <div class="col-xs-12 col-sm-6">
                                 <span class="hour">19h-21h :</span>
                                 <div class="form-group">
                                     <label for="{{ place.day }}-adress-19">Adresse</label>

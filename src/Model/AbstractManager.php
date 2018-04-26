@@ -75,7 +75,7 @@ abstract class AbstractManager
     }
 
     /**
-     * INSERT one row in dataase
+     * INSERT one row in database
      *
      * @param Array $data
      */
@@ -95,7 +95,6 @@ abstract class AbstractManager
         }
         $statement->execute();
     }
-
 
     /**
      * @param array $id

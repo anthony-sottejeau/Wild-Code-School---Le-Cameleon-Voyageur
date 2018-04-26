@@ -25,11 +25,15 @@
                         </div>
                         <div>
                             <span class="hour"><span class="glyphicon glyphicon-map-marker"></span>12h-14h :</span>
-                            <span id="{{ place.day }}_12h-14h" data="{{ place.coord_day }}" class="marker">{{ place.adress_day }}</span>
+                            <span id="{{ place.day }}_12h-14h" data="{{ place.coord_day }}" class="marker">
+                                {{ place.adress_day ? place.adress_day : 'Le foodtruck n\'est pas disponible' }}
+                            </span>
                         </div>
                         <div>
                             <span class="hour"><span class="glyphicon glyphicon-map-marker"></span>19h-21h :</span>
-                            <span id="{{ place.day }}_19h-21h" data="{{ place.coord_evening }}" class="marker">{{ place.adress_evening }}</span>
+                            <span id="{{ place.day }}_19h-21h" data="{{ place.coord_evening }}" class="marker">
+                                  {{ place.adress_evening ? place.adress_evening : 'Le foodtruck n\'est pas disponible' }}
+                            </span>
                         </div>
                     {% endif %}
                 {% endfor %}
