@@ -92,6 +92,10 @@ h3 {
     font-family: plaza;
 }
 
+.container{
+    margin-bottom:20px;
+}
+
 .menu h3:after, .menu h3:before, .day h3:before, .day h3:after{
     content: "\e044";
     font-family: 'Glyphicons Halflings';
