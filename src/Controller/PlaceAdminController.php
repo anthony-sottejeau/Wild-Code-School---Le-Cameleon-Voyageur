@@ -10,7 +10,7 @@
 namespace Controller;
 
 use Model\PlaceManager;
-
+use Structures\Notification;
 /**
  * Class ItemController
  *

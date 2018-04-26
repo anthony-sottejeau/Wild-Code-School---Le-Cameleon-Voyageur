@@ -10,29 +10,24 @@ namespace Controller;
 
 use Model\CategoryManager;
 use Model\FoodManager;
+use http\Exception;
+use Structures\Notification;
+use Structures\Session;
+use Controller\AbstractController;
 
-class FoodAdminController extends \Controller\AbstractController
+class FoodAdminController extends AbstractController
 {
     public function index()
     {
+        $notification = (new notification())->getNotification('notification');
         $foodManager = new FoodManager();
-        $foods = $foodManager->selectFoodByCategory();
+        $foods = $foodManager->selectFoodByCategoryAdmin();
         $foodCategories = [];
         foreach ($foods as $food) {
-            $foodCategories[$food['category']]['name'] = $food['categoryName'];
-            $foodCategories[$food['category']]['produits'][] = $food;
+            $foodCategories[$food['categoryId']]['name'] = $food['categoryName'];
+            $foodCategories[$food['categoryId']]['produits'][] = $food;
         }
-        $categoryManager = new CategoryManager();
-        $categories = $categoryManager->selectAll();
-        foreach ($categories as $category) {
-            if (isset($foodCategories[$category->getId()])) {
-                $foodCategories[$category->getId()]['deletable'] = false;
-            } else {
-                $foodCategories[$category->getId()]['deletable'] = true;
-                $foodCategories[$category->getId()]['name'] = $category->getName();
-            }
-        }
-        return $this->twig->render('admin/food.html.twig', ['foodCategories' => $foodCategories, 'categories' => $categories]);
+        return $this->twig->render('admin/food.html.twig', ['foodCategories' => $foodCategories, 'notification' => $notification]);
     }
 
     public function showProduct(int $id)
@@ -54,71 +49,129 @@ class FoodAdminController extends \Controller\AbstractController
 
     public function editCategory()
     {
+        $categoryManager = new CategoryManager();
         if (!empty($_POST)) {
             foreach ($_POST as $key => $value) {
                 $cleanPost[$key] = trim($value);
             }
-            $categoryManager = new CategoryManager();
-            $categoryManager->update($cleanPost['id'], [
-                'name' => $cleanPost['name'],
-            ]);
+            $notification = new Notification();
+            $notification->setNotification('success', 'L\'enregistrement s\'est bien déroulé');
+            try {
+                if (empty($cleanPost['name'])) {
+                    throw new \Exception('Le nom de la catégorie ne peut pas être vide');
+                }
+                $categoryManager->update($cleanPost['id'], [
+                    'name' => $cleanPost['name'],
+                ]);
+            } catch (\Exception $e) {
+                $notification->setNotification('danger', $e->getMessage());
+            }
+
+
             header('location:/admin/menu');
             exit();
         }
-        // #TODO gestion des erreurs et notifications
+
     }
 
     public function editProduct()
     {
+        $productManager = new FoodManager();
         if (!empty($_POST)) {
             foreach ($_POST as $key => $value) {
                 $cleanPost[$key] = trim($value);
             }
-            $productManager = new FoodManager();
-            $productManager->update($cleanPost['id'], [
-                'name' => $cleanPost['name'],
-                'price' => $cleanPost['price'],
-                'ingredients' => $cleanPost['ingredients'],
-                'category' => $cleanPost['category'],
+            $notification = new Notification();
+            $notification->setNotification('success', 'L\'enregistrement s\'est bien déroulé');
+            try {
+                if (empty($cleanPost['name'])
+                    OR empty($cleanPost['price'])
+                    OR empty($cleanPost['category'])) {
+                    throw new \Exception('Les champs obligatoires doivent être remplis');
+                }
+                $productManager->update($cleanPost['id'], [
+                    'name' => $cleanPost['name'],
+                    'price' => $cleanPost['price'],
+                    'ingredients' => $cleanPost['ingredients'],
+                    'category' => $cleanPost['category'],
 
-            ]);
-            header('location:/admin/menu');
-            exit();
+                ]);
+
+            } catch (\Exception $e) {
+                $notification->setNotification('danger', $e->getMessage());
+            }
         }
-        // #TODO gestion des erreurs et notifications
+        header('location:/admin/menu');
+        exit();
+
     }
 
 
     public function deleteProduct()
     {
-        $id = $_POST['id'];
         $foodManager = new FoodManager();
-        $foodManager->delete($id);
+        $id = $_POST['id'];
+        $notification = new Notification();
+        $notification->setNotification('success', 'L\'enregistrement s\'est bien déroulé');
+        try {
+            if (empty($id)) {
+                throw new \Exception('Le produit n\'existe pas');
+            }
+            $foodManager->delete($id);
+        } catch (\Exception $e) {
+            $notification->setNotification('danger', $e->getMessage());
+        }
         header('location:/admin/menu');
         exit();
     }
 
     public function deleteCategory()
     {
-        $id = $_POST['id'];
         $categoryManager = new CategoryManager();
-        $categoryManager->delete($id);
+        $id = $_POST['id'];
+        $notification = new Notification();
+        $notification->setNotification('success', 'L\'enregistrement s\'est bien déroulé');
+        try {
+            if (empty($id)) {
+                throw new \Exception('La categorie n\'existe pas');
+            }
+            $categoryManager->delete($id);
+        } catch (\Exception $e) {
+            $notification->setNotification('danger', $e->getMessage());
+        }
         header('location:/admin/menu');
         exit();
     }
 
     public function insertProduct()
     {
-        $foodManager = new FoodManager();
-        $foodManager->insert([
-            'name' => $_POST['name'],
-            'price' => $_POST['price'],
-            'ingredients' => $_POST['ingredients'],
-            'category' => $_POST['category'],
-        ]);
+        $productManager = new FoodManager();
+        if (!empty($_POST)) {
+            foreach ($_POST as $key => $value) {
+                $cleanPost[$key] = trim($value);
+            }
+            $notification = new Notification();
+            $notification->setNotification('success', 'L\'enregistrement s\'est bien déroulé');
+            try {
+                if (empty($cleanPost['name'])
+                    OR empty($cleanPost['price'])
+                    OR empty($cleanPost['category'])) {
+                    throw new \Exception('Les champs obligatoires doivent être remplis');
+                }
+                $productManager->insert( [
+                    'name' => $cleanPost['name'],
+                    'price' => $cleanPost['price'],
+                    'ingredients' => $cleanPost['ingredients'],
+                    'category' => $cleanPost['category'],
+
+                ]);
+
+            } catch (\Exception $e) {
+                $notification->setNotification('danger', $e->getMessage());
+            }
+        }
         header('location:/admin/menu');
         exit();
-        // #TODO gestion des erreurs et notifications
     }
 
     public function showNewProduct()
@@ -131,12 +184,27 @@ class FoodAdminController extends \Controller\AbstractController
     public function insertCategory()
     {
         $categoryManager = new CategoryManager();
-        $categoryManager->insert([
-            'name' => $_POST['name'],
-        ]);
-        header('location:/admin/menu');
-        exit();
-        // #TODO gestion des erreurs et notifications
+        if (!empty($_POST)) {
+            foreach ($_POST as $key => $value) {
+                $cleanPost[$key] = trim($value);
+            }
+            $notification = new Notification();
+            $notification->setNotification('success', 'L\'enregistrement s\'est bien déroulé');
+            try {
+                if (empty($cleanPost['name'])) {
+                    throw new \Exception('Le nom de la catégorie ne peut pas être vide');
+                }
+                $categoryManager->insert( [
+                    'name' => $cleanPost['name'],
+                ]);
+            } catch (\Exception $e) {
+                $notification->setNotification('danger', $e->getMessage());
+            }
+
+
+            header('location:/admin/menu');
+            exit();
+        }
     }
 
     public function showNewCategory()
