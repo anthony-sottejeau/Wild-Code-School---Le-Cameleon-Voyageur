@@ -4,9 +4,10 @@
     <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
 
         <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            {% for image in slider %}
+                <li data-target="#carousel-example-generic" data-slide-to="{{ loop.index0 }}" {% if loop.index0 == 0 %} class="active" {% endif %}></li>
+            {% endfor %}
+
         </ol>
 
         <div class="carousel-inner" role="listbox">
