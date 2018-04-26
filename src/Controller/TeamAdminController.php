@@ -20,13 +20,11 @@ class TeamAdminController extends AbstractController
     {
         session_start();
         $teamManager = new TeamManager();
-        $infos1 = $teamManager->selectWithLimit();
-        $infos2 = $teamManager->selectWithLimit(1,2);
+        $infos = $teamManager->selectWithLimit(0,2);
         $notification = $_SESSION['notification'] ?? null;
         session_destroy();
-        return $this->twig->render('admin/team.html.twig', ['team1'=>$infos1,'team2'=>$infos2,'notification'=>$notification]);
+        return $this->twig->render('admin/team.html.twig', ['teams'=>$infos,'notification'=>$notification]);
     }
-
     public function edit()
     {
         session_start();
@@ -35,16 +33,13 @@ class TeamAdminController extends AbstractController
         {
                 foreach ($_POST as $key => $value)
                 {
-                    if($key!="personne")
-                    {
                         $cleanPost[$key] = trim($value);
-                    }
                 }
                 try
                 {
                     foreach ($cleanPost as $key => $value)
                     {
-                        $teamManager->update($_POST['id'], [$key => $cleanPost[$key]]);
+                        $teamManager->update($cleanPost['id'], [$key => $cleanPost[$key]]);
                     }
                 }
                 catch (\Exception $e)
