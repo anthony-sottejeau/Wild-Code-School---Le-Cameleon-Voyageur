@@ -49,17 +49,13 @@ class SpotlightAdminController extends AbstractController
                     $upload = new Upload('upload/spotlight');
                     $upload->delete($spotlight->getPhoto());
                     $path = $upload->add($_FILES['photo']);
-                    if($path) {
-                        $spotlightManager->update($cleanPost['id'], [
-                            'text'=>$cleanPost['text'],
-                            'photo'=>$path,
-                            'alt'=>$cleanPost['alt']]);
-                    }
                 } else {
-                    $spotlightManager->update($cleanPost['id'], [
-                        'text'=>$cleanPost['text'],
-                        'alt'=>$cleanPost['alt']]);
+                    $path = $spotlight->getPhoto();
                 }
+                $spotlightManager->update($cleanPost['id'], [
+                    'text'=>$cleanPost['text'],
+                    'photo'=>$path,
+                    'alt'=>$cleanPost['alt']]);
 
             } catch (\Exception $e) {
                 $notification->setNotification('danger', $e->getMessage());
