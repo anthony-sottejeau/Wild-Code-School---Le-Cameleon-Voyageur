@@ -147,6 +147,9 @@ section:nth-child(even){
     text-align: left;
 }
 
+#spotlight{
+    margin-bottom: 25px;
+}
 
 .admin-menu .nav-tabs>li.active>a{
     background-color:#EEE;
