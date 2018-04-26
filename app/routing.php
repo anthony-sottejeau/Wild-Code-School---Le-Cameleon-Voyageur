@@ -13,6 +13,12 @@ $routes = [
     'Main' => [ // Controller
         ['index', '/', 'GET'], // action, url, method    ],
     ],
+    'HeaderAdmin' => [
+        ['index', '/admin/header','GET'],
+        ['editAlert', '/admin/header/editAlert','POST'],
+        ['addImage', '/admin/header/addImage','POST'],
+        ['deleteImage', '/admin/header/deleteImage','POST'],
+    ],
     'Place' => [
         ['index', '/lieux','GET'],
     ],
@@ -42,5 +48,10 @@ $routes = [
     ],
     'Gallery' => [
         ['index','/gallery', 'GET'],
+    ],
+    'GalleryAdmin' => [
+        ['index', '/admin/gallery', 'GET'],
+        ['insert', '/admin/gallery/insert', 'POST'],
+        ['delete', '/admin/gallery/delete/', 'POST'],
     ],
 ];
