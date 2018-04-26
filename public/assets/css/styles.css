@@ -292,7 +292,7 @@ label{
 }
 
 .gallery .button-container a {
-    background-color: #728e20;
+    background-color: #aed135;
     font-size: 1em;
     color: white;
     width: 250px;
@@ -308,6 +308,14 @@ label{
 .admin-footer{
     background-color:transparent;
 }
+
+
+.title_admin_comp {
+    color: #728e20;
+    font-size: 1em;
+    font-family: plaza;
+}
+
 /* slider */
 .imgs-slider {
     object-fit: cover;
@@ -320,4 +328,5 @@ label{
     max-height: 250px;
     min-height: 250px;
     width: 100%;
+
 }

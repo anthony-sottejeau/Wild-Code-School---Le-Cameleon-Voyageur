@@ -6,17 +6,16 @@
                 <h3>Gestion de la galerie</h3>
                 <form action="/admin/gallery/insert" method="post" enctype="multipart/form-data" class="form-inline text-center">
                     <div class="form-group">
-                        <label for="file">Fichier(s)</label>
-                        <input type="file" class="form-control" name="file" id="file" placeholder="">
+                        <label for="file">Fichier</label>
+                        <input type="file" class="form-control" name="file" id="file">
                     </div>
                     <div class="form-group">
-                        <label for="alt">Alt</label>
-                        <input type="text" class="form-control" name="alt" id="alt" placeholder="">
+                        <label for="alt">Description</label>
+                        <input type="text" class="form-control" name="alt" id="alt" placeholder="Description de l'image">
                     </div>
                     <button type="submit" name="submit" class="btn btn-primary">Envoyer</button>
                 </form>
             </div>
-
             <table class="table table-striped table-hover">
                 <thead>
                 <tr>

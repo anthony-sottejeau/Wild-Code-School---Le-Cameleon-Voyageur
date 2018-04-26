@@ -11,11 +11,19 @@
 
 $routes = [
     'Main' => [ // Controller
-        ['index', '/', 'GET'], // action, url, method    ],
+        ['index', '/', 'GET'], // action, url, method
+    ],
+
+    'CompanyAdmin' => [
+        ['index', '/admin/company','GET'],
+        ['edit', '/admin/company/edit',['POST','GET']],
     ],
     'HeaderAdmin' => [
         ['index', '/admin/header','GET'],
         ['editAlert', '/admin/header/editAlert','POST'],
+        ['addImage', '/admin/header/addImage','POST'],
+        ['deleteImage', '/admin/header/deleteImage','POST'],
+
     ],
     'SpotlightAdmin' => [
         ['index', '/admin/spotlight', 'GET'],
