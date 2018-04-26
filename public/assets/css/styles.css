@@ -178,6 +178,9 @@ h4 {
     text-align: left;
 }
 
+#spotlight{
+    margin-bottom: 25px;
+}
 
 .admin-menu .nav-tabs>li.active>a{
     background-color:#EEE;
