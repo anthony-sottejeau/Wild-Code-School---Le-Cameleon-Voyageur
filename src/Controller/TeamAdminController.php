@@ -21,11 +21,9 @@ class TeamAdminController extends AbstractController
  */
     public function index()
     {
-        session_start();
         $teamManager = new TeamManager();
         $infos = $teamManager->selectWithLimit(0,2);
-        $notification = $_SESSION['notification'] ?? null;
-        session_destroy();
+        $notification = (new notification())->getNotification('notification');
         return $this->twig->render('admin/team.html.twig', ['teams'=>$infos,'notification'=>$notification]);
     }
     public function edit()
