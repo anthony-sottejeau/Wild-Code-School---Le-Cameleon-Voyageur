@@ -52,7 +52,9 @@ class CompanyAdminController extends AbstractController
                     'phone' => $cleanPost['phone'],
                     'facebook' => $cleanPost['facebook'],
                     'tweeter' => $cleanPost['tweeter'],
-                    'instagram' => $cleanPost['instagram']
+                    'instagram' => $cleanPost['instagram'],
+                    'mentions_legales' => $cleanPost['mentions_legales'],
+                    'concept' => $cleanPost['concept']
                 ]);
             }
         }
