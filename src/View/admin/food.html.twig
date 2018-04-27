@@ -29,8 +29,9 @@
                             <td>{{ food.price }}€</td>
                             <td>{{ food.ingredients }}</td>
                             <td>
-                                <a href="/admin/menu/showProduct/{{ food.foodId }}">
-                                    <input type="submit" class="btn btn-primary" value="Modifier">
+                                <a href="/admin/menu/showProduct/{{ food.foodId }}"
+                                   type="submit"
+                                   class="btn btn-primary">Modifier
                                 </a>
                             </td>
                             <td>
@@ -63,9 +64,7 @@
                     <tr>
                         <td>{{ category.name }}</td>
                         <td>
-                            <a href="/admin/menu/showCategory/{{ key }}">
                                 <a href="/admin/menu/showNewCategory" type="button" class="btn btn-success">Modifier</a>
-                            </a>
                         </td>
                         <td>
                             <form action="/admin/menu/deleteCategory" method="post">
