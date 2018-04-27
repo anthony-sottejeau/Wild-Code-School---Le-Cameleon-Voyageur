@@ -92,6 +92,10 @@ h3 {
     font-family: plaza;
 }
 
+.container{
+    margin-bottom:20px;
+}
+
 .menu h3:after, .menu h3:before, .day h3:before, .day h3:after{
     content: "\e044";
     font-family: 'Glyphicons Halflings';
@@ -141,6 +145,10 @@ section:nth-child(even){
     margin-bottom: auto;
     padding-top: 15px;
     text-align: left;
+}
+
+#spotlight{
+    margin-bottom: 25px;
 }
 
 .admin-menu .nav-tabs>li.active>a{
@@ -298,23 +306,18 @@ label{
     height: 50px;
     margin-top: 12px;
 }
-
 .gallery .button-container a:hover {
     background-color: #ee7722;
 }
-
 /*admin*/
 .admin-footer{
     background-color:transparent;
 }
-
-
 .title_admin_comp {
     color: #728e20;
     font-size: 1em;
     font-family: plaza;
 }
-
 /* slider */
 .imgs-slider {
     object-fit: cover;
@@ -322,10 +325,11 @@ label{
     min-height: 400px;
     width: 100%;
 }
+/*team admin*/
 .img-slider {
     object-fit: cover;
     max-height: 250px;
     min-height: 250px;
     width: 100%;
-
 }
+

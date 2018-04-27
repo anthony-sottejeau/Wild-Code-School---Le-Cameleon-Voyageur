@@ -74,7 +74,6 @@ abstract class AbstractManager
         $statement->execute();
     }
 
-
     /**
      * INSERT one row in database
      *
@@ -86,7 +85,6 @@ abstract class AbstractManager
         foreach($data as $key=>$value){
             $queryKey[] = $key;
         }
-
         $query .= implode(', ', $queryKey);
         $query .= ') VALUES (:';
         $query .= implode(', :', $queryKey);
@@ -130,5 +128,12 @@ abstract class AbstractManager
     public function selectFirst()
     {
         return $this->pdoConnection->query('SELECT * FROM ' . $this->table . ' LIMIT 1 ', \PDO::FETCH_CLASS, $this->className)->fetch();
+    }
+
+
+
+    public function selectWithLimit($offset=0, $limit=1)
+    {
+      return $this->pdoConnection->query('SELECT * FROM ' . $this->table . ' LIMIT ' . $offset . ',' . $limit, \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
 }

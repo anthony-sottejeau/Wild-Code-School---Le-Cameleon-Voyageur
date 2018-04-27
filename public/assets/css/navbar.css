@@ -11,6 +11,10 @@
     height: 70px;
 }
 
+.navbar-default {
+    border:0px;
+}
+
 
 .navbar-default .navbar-collapse {
     background-color: #aed135;

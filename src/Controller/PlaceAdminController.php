@@ -34,6 +34,7 @@ class PlaceAdminController extends AbstractController
     public function edit()
     {
         if (!empty($_POST)) {
+
             foreach ($_POST as $key => $value) {
                 $cleanPost[$key] = trim($value);
             }
