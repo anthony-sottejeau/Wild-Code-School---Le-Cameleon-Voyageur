@@ -125,12 +125,10 @@ abstract class AbstractManager
      *
      * @return array
      */
-    public function selectFirst()
+     public function selectFirst()
     {
         return $this->pdoConnection->query('SELECT * FROM ' . $this->table . ' LIMIT 1 ', \PDO::FETCH_CLASS, $this->className)->fetch();
     }
-
-
 
     public function selectWithLimit($offset=0, $limit=1)
     {
