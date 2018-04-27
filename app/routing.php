@@ -15,14 +15,14 @@ $routes = [
     ],
 
     'CompanyAdmin' => [
-        ['index', '/admin/company','GET'],
-        ['edit', '/admin/company/edit',['POST','GET']],
+        ['index', '/admin/company', 'GET'],
+        ['edit', '/admin/company/edit', ['POST', 'GET']],
     ],
     'HeaderAdmin' => [
-        ['index', '/admin/header','GET'],
-        ['editAlert', '/admin/header/editAlert','POST'],
-        ['addImage', '/admin/header/addImage','POST'],
-        ['deleteImage', '/admin/header/deleteImage','POST'],
+        ['index', '/admin/header', 'GET'],
+        ['editAlert', '/admin/header/editAlert', 'POST'],
+        ['addImage', '/admin/header/addImage', 'POST'],
+        ['deleteImage', '/admin/header/deleteImage', 'POST'],
 
     ],
     'SpotlightAdmin' => [
@@ -30,15 +30,15 @@ $routes = [
         ['editSpotlight', '/admin/editspotlight', 'POST'],
     ],
     'Place' => [
-        ['index', '/lieux','GET'],
+        ['index', '/lieux', 'GET'],
     ],
     'Admin' => [
-        ['index', '/admin','GET'],
+        ['index', '/admin', 'GET'],
     ],
     'PlaceAdmin' => [
-        ['index', '/admin/place','GET'],
-        ['edit', '/admin/place/edit','POST'],
-        ['edit', '/admin/place/edit','GET'],
+        ['index', '/admin/place', 'GET'],
+        ['edit', '/admin/place/edit', 'POST'],
+        ['edit', '/admin/place/edit', 'GET'],
     ],
     'Food' => [
         ['index', '/menu', 'GET'],
@@ -57,13 +57,14 @@ $routes = [
         ['showNewCategory', '/admin/menu/showNewCategory', 'GET'],
     ],
     'Gallery' => [
-        ['index','/gallery', 'GET'],
+        ['index', '/gallery', 'GET'],
     ],
     'TeamAdmin' => [
-        ['index','/admin/team','GET'],
-        ['edit', '/admin/team/edit','POST'],
-        ['edit', '/admin/team/edit','GET'],
-        ],
+        ['index', '/admin/team', 'GET'],
+        ['edit', '/admin/team/edit', 'POST'],
+        ['edit', '/admin/team/edit', 'GET'],
+    ],
+
     'GalleryAdmin' => [
         ['index', '/admin/gallery', 'GET'],
         ['insert', '/admin/gallery/insert', 'POST'],
