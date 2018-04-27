@@ -1,23 +1,21 @@
 /* Navbar */
-@font-face {
-    font-family: plaza;
-    src: url(../fonts/29849_PlazaITC-Normal.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
 
 .navbar-fixed-top {
     background-color: #aed135;
     height: 70px;
 }
 
+.navbar-default {
+    border: 0;
+}
 
 .navbar-default .navbar-collapse {
     background-color: #aed135;
-    border:0px;
+    border: 0;
 }
+
 .navbar-default .navbar-nav>li>a {
-    font-size: 25px;
+    font-size: 2.5rem;
     color: #FFF;
     line-height: 150%;
     font-family: "plaza", "Open Sans";
@@ -35,26 +33,54 @@
 .navbar-nav {
     float: right;
 }
+
 .navbar-brand {
     height: inherit;
     display: flex;
     padding: 3px;
 }
+
 .cameleon {
-    font-size: 1.7em;
+    font-size: 3rem;
     color: #FFF;
-    line-height: 200%;
+    margin: auto;
     font-family: "plaza", "Open Sans";
     height: inherit;
     margin-left: 1vw;
 }
 
-@media screen and (max-width: 400px) {
-    .cameleon {
-        font-size: 1em;
-    }
-
-}
 .navbar-default .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
     background-color: #aed135;
+}
+
+@media screen and (max-width: 425px) {
+    .cameleon {
+        font-size: 2rem;
+        margin-left: 5vw;
+
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+
+    .navbar-nav>li {
+        float: none;
+    }
+
+    .collapse.in{
+        display:block !important;
+    }
 }
