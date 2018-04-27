@@ -2,7 +2,7 @@
 <footer class="font-small container-fluid ">
     <div class=" row ">
         <!--Footer Links-->
-        <div class="col-xs-5 col-sm-4 col-md-4 col-lg-4 small  listlink">
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 small  listlink">
             <ul class="list-unstyled">
                 <li>
                     <a href="#!">Notre carte</a>
@@ -22,22 +22,24 @@
             </ul>
         </div>
         <!--End the Footer Links-->
+
         <div class="col-xs-6 col-xs-offset-1 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-0 col-lg-4 col-lg-offset-0">
+
             <!--Sociale Media-->
             <div class="icons">
                 <ul class=" list-inline ">
                     <li class="list-inline-item">
-                        <a href="https://fr-fr.facebook.com/lecameleonvoyageur/">
+                        <a href="{{ company.facebook }}">
                             <i><img src="assets/images/facebook.png"></i>
                         </a>
                     </li>
                     <li class="list-inline-item ">
-                        <a href="#">
+                        <a href="{{ company.tweeter }}">
                             <i> <img src="assets/images/twitter.png"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#">
+                        <a href="{{ company.instagram }}">
                             <i><img src="assets/images/instagram.png"></i>
                         </a>
                     </li>
@@ -46,7 +48,7 @@
                 <!--Footer Telephone-->
                 <div class="phone">
                     <p class=" mx-0 ">Mentions légales</p>
-                    <p class=" mx-0 "> 06 12 34 56 78</p>
+                    <p class=" mx-0 "> {{ company.phone }} </p>
                 </div>
                 <!--End off the Footer Telephone-->
             </div>
@@ -56,6 +58,7 @@
              data-href="https://www.facebook.com/lecameleonvoyageur/"
              data-tabs="timeline" data-height="290" data-small-header="true" data-adapt-container-width="false"
              data-hide-cover="false"
+
              data-show-facepile="false">
 
             <blockquote cite="https://www.facebook.com/lecameleonvoyageur/" class="fb-xfbml-parse-ignore">
