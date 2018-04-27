@@ -27,17 +27,17 @@
             <div class="icons"  >
                 <ul class=" list-inline ">
                     <li class="list-inline-item">
-                        <a href="https://fr-fr.facebook.com/lecameleonvoyageur/">
+                        <a href="{{ company.facebook }}">
                             <i><img src="assets/images/facebook.png"></i>
                         </a>
                     </li>
                     <li class="list-inline-item ">
-                        <a href="#">
+                        <a href="{{ company.tweeter }}">
                             <i> <img src="assets/images/twitter.png"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#">
+                        <a href="{{ company.instagram }}">
                             <i><img src="assets/images/instagram.png"></i>
                         </a>
                     </li>
@@ -46,7 +46,7 @@
                 <!--Footer Telephone-->
                 <div class="phone" >
                     <p class=" mx-0 ">Mentions légales</p>
-                    <p class=" mx-0 "> 06 12 34 56 78</p>
+                    <p class=" mx-0 "> {{ company.phone }} </p>
                 </div>
                 <!--End off the Footer Telephone-->
             </div>
