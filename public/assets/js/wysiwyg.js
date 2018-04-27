@@ -32,9 +32,3 @@ $(document).ready(function () {
         ]
     });
 });
-$(function () {
-    $('div#mentions_legales').froalaEditor({
-        heightMin: 50,
-        heightMax: 50
-    })
-});
