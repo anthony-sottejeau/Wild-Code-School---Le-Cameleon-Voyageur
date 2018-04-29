@@ -306,13 +306,19 @@ label {
     background-color: #aed135;
     font-size: 1em;
     color: white;
-    width: 250px;
+    width: 300px;
     height: 50px;
-    margin-top: 12px;
+    margin-top: 6px;
+    margin-bottom: 17px;
 }
 
 .gallery .button-container a:hover {
     background-color: #ee7722;
+}
+
+.gallery span.glyphicon.glyphicon-camera {
+    top:2px;
+    padding-right: 4px;
 }
 
 /*admin*/
@@ -345,4 +351,3 @@ label {
     min-height: 250px;
     width: 100%;
 }
-
