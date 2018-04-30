@@ -47,7 +47,28 @@
                 <!--End of the sociale midia-->
                 <!--Footer Telephone-->
                 <div class="phone">
-                    <p class=" mx-0 ">Mentions légales</p>
+
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                        Mentions légales</button>
+
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Mentions légales</h4>
+                                </div>
+                                <div class="modal-body">
+                                    {{ company.mentions_legales }}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<p class=" mx-0 ">Mentions légales</p>-->
                     <p class=" mx-0 "> {{ company.phone }} </p>
                 </div>
                 <!--End off the Footer Telephone-->
