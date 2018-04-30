@@ -28,7 +28,7 @@
 }
 
 @-moz-document url-prefix() {
-    .gallery-admin .form-control {
-        height: auto;
+    .form-control {
+        height: inherit;
     }
 }
