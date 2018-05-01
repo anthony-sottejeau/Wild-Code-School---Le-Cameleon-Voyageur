@@ -346,3 +346,7 @@ label {
     width: 100%;
 }
 
+.message {
+    color: #e72;
+    font-size: 0.5em;
+}
