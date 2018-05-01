@@ -1,8 +1,11 @@
 /*footer*/
 footer {
     background-color:#343232;
-    height: 340px;
+    height: 65vh;
     margin-top:10px;
+}
+.footer-row {
+    background-color:#343232;
 }
 .icons {
     padding-right: 0;
@@ -35,7 +38,8 @@ footer p {
 }
 .listlink a{
     color: #C5C1C2 ;
-    font-size: 1.8em;
+    font-size: 1.4em;
+    line-height: 200%;
 }
 .listlink>ul>li>a:hover {
     color: #728e20;
@@ -43,13 +47,13 @@ footer p {
 }
 .face {
     float: right;
-    padding: 5px 0px 5px 0px;
+    padding: 3vh 0;
     text-align: center;
     max-height: 20%;
 }
 .listlink>ul>li>a::before {
     content: "| ";
-    color: orangered;
+    color: #E72;
 }
 @keyframes spinAround {
     from {
