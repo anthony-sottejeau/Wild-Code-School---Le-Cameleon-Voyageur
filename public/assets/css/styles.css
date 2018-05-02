@@ -136,7 +136,7 @@ a:hover {
 .perso h4 {
     font-size: 3rem;
     text-align: center;
-    color: #ee7722;
+    color: #728e20;
     font-family: nexa;
 }
 
@@ -231,7 +231,7 @@ a:hover {
 }
 
 .gallery .button-container {
-    
+
 }
 
 .gallery .button-container a {
@@ -252,6 +252,7 @@ a:hover {
 .gallery h2 {
     font-family: nexarust, sans-serif;
     font-size: 4rem;
+    color: #ee7722;
 }
 
 .gallery span.glyphicon.glyphicon-camera {
