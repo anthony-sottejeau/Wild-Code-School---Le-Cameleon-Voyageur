@@ -43,6 +43,51 @@ section {
     }
 }
 
+.admin-menu .nav-tabs > li.active > a {
+    background-color: #EEE;
+    color: #333;
+}
+
+.section-admin {
+    padding-top: 10px;
+    Padding-bottom: 10px;
+}
+
+label {
+    font-size: 20px;
+}
+
+.notification {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+
+/*admin*/
+.admin-footer {
+    background-color: transparent;
+}
+
+.title_admin_comp {
+    color: #728e20;
+    font-size: 1em;
+    font-family: plaza;
+}
+
+#mentions_legales {
+    max-height: 50px;
+}
+
+/*team admin*/
+.img-slider {
+    object-fit: cover;
+    max-height: 250px;
+    min-height: 250px;
+    width: 100%;
+}
+
 .panel-theme {
     border-color: #aed135;
 }

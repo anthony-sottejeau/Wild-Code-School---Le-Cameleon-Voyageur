@@ -1,12 +1,9 @@
 /*footer*/
 footer {
-    background-color: #343232;
-    height: 400px;
-    margin-top:10px;
+    height: 65vh;
+    background-color: #8f8a8a;
 }
-.footer-row {
-    background-color:#343232;
-}
+
 .icons {
     padding-right: 0;
     padding-left: 0;
@@ -19,33 +16,21 @@ footer {
     height: 32px;
 }
 
-.list-inline > li > a > i > img:hover {
-    animation: spinAround 2s linear infinite;
-}
-
-.phone {
-    width: auto;
-}
-
-.phone p {
-    margin-bottom: 0;
+.phone p{
     text-align: center;
 }
 
 footer ul {
-    margin-top: 20px;
-    font-size: 0.8em;
+    margin-top: 8.5rem;
 }
 
 footer p {
-    color: #C5C1C2;
-    margin-left: 1vh;
-    padding: 0;
-}
+    color: #343232;
 
-.listlink a {
-    color: #C5C1C2;
-    font-size: 1.8em;
+}
+.listlink a{
+    color: #343232 ;
+    font-size: 2rem;
     line-height: 200%;
 }
 
@@ -61,24 +46,23 @@ footer p {
     max-height: 20%;
 }
 
-.listlink > ul > li > a::before {
-    content: "| ";
-    color: #E72;
-}
-
-@keyframes spinAround {
-    from {
-        transform: rotate(0deg)
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 @media screen and (max-width: 415px) {
     .list-inline img {
         width: 26px;
         height: 26px;
+
+    }
+    .listlink a{
+        font-size: 1em;
+        }
+    .phone p{
+        font-size: 1rem;
+        }
+    footer ul {
+        margin: 2rem;
+    }
+    .icons {
+        margin: 2rem;
     }
 
     .listlink a {
@@ -91,14 +75,6 @@ footer p {
 
     footer {
         height: 100px;
-    }
-
-    footer ul {
-        margin-top: 0.9rem;
-    }
-
-    .icons {
-        margin-top: 2.3rem;
     }
 }
 
