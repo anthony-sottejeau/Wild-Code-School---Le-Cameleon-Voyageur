@@ -30,7 +30,7 @@ class TeamAdminController extends AbstractController
     {
         $teamManager = new TeamManager();
         $notification = new Notification();
-        $directory ='team';
+        $directory ='upload/team';
         if (!empty($_POST))
         {
                 foreach ($_POST as $key => $value)
