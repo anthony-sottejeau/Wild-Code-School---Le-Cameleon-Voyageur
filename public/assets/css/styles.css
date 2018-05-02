@@ -1,24 +1,18 @@
 /* GLOBAL */
 
 @font-face {
-    font-family: nexaicon;
-    src: url(../fonts/NexaRustExtras-Free.otf);
-}
-@font-face {
     font-family: nexa;
     src: url(../fonts/NexaRustScriptL-0.otf);
 }
-@font-face {
-    font-family: plaza;
-    src: url(../fonts/29849_PlazaITC-Normal.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
+
 @font-face {
     font-family: nexarust;
     src: url("../fonts/NexaRustSlab-BlackShadow01.otf");
 }
-
+@font-face {
+    font-family: peax;
+    src: url("../fonts/PeaxWebdesignarrows.ttf");
+}
 body {
     background-color: #F3F3F3;
     font-family: "Open Sans";
@@ -62,12 +56,14 @@ a:hover {
 
 /* slider */
 .slider-indicator {
-    font-family: "nexaicon", fantasy;
-    font-size: 10rem;
+    font-family: "peax", fantasy;
+    font-size: 6rem;
     color: #647c1c;
+
 }
+
 .carousel {
-    line-height: 300px;
+    line-height: 400px;
 }
 
 .imgs-slider {
