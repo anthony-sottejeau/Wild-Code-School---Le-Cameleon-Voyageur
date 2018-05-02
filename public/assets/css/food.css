@@ -9,6 +9,7 @@ h3 {
     font-family: nexa;
     font-size: 2.5rem;
     text-align: center;
+    padding-bottom: 2vh;
 }
 p {
     font-family: "Open Sans";
@@ -37,6 +38,10 @@ body {
 @media screen and (max-width: 500px) {
     h2 {
         font-size: 2.3em;
+        background-image: unset;
+        transform: rotate(0deg);
+        height: 50px;
+        padding-top: unset;
     }
     h3 {
         font-size: 1.7em;
@@ -52,10 +57,9 @@ body {
 
 }
 .price {
-    color: #ee7722;
-    padding-top: 2rem;
+    padding-top: 1rem;
     margin: 0;
-    font-style: unset;
+    font-weight: bold;
 }
 .ingredients {
     font-style: italic;

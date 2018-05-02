@@ -40,7 +40,7 @@ a:hover {
 /* alert */
 .alert-message, .alert-danger {
     color: white;
-    font-size: 1.2em;
+    font-size: 2rem;
     background-color: #ee7722;
     padding: 0;
     margin: 0;
@@ -48,7 +48,7 @@ a:hover {
 
 .alert-success {
     color: white;
-    font-size: 1.5em;
+    font-size: 2rem;
     background-color: #728e20;
     padding: 0;
     margin: 0;
@@ -72,7 +72,10 @@ a:hover {
     min-height: 400px;
     width: 100%;
 }
-
+.img-slider {
+    object-fit: cover;
+    height: 300px;
+}
 .slider {
     padding: 0;
 }
@@ -90,9 +93,18 @@ a:hover {
     background-repeat: no-repeat;
     height: 150px;
     padding-top: 50px;
+    margin-bottom: 30px;
     transform: rotate(7deg);
+    margin-top: 0;
 }
-
+@media screen and (max-width: 500px) {
+    .title_concept {
+        background-image: unset;
+        transform: rotate(0deg);
+        height: 50px;
+        padding-top: unset;
+    }
+}
 .text_concept {
     background-color: transparent;
     text-align: center;
@@ -114,12 +126,12 @@ a:hover {
 }
 
 .text_spotlight {
-    font-size: 2.5rem;
+    margin-left: 2vh;
 }
 
 #spotlight {
     margin-bottom: 25px;
-    background-image: url("../images/brick_background.jpg");
+    background-image: url("../images/grey_background.jpg");
     background-size: cover;
 }
 
@@ -161,7 +173,14 @@ a:hover {
     padding-top: 50px;
     transform: rotate(7deg);
 }
-
+@media screen and (max-width: 500px) {
+    .team h2 {
+        background-image: unset;
+        transform: rotate(0deg);
+        height: 50px;
+        padding-top: unset;
+    }
+}
 .team center-team {
     display: flex;
     flex-direction: row;
