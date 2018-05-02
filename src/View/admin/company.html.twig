@@ -4,7 +4,7 @@
         <section id="company">
             <form action="/admin/company/edit" method="POST">
                 <div class="row">
-                    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6">
+                    <div class="col-xs-offset-1 col-xs-10 col-sm-5">
                         <input name="id" type="hidden" value="{{ company.id }}"/>
                         <div class="form-group">
                             <label for="phone"><span class="title_admin_comp">Numero de telephone :</span></label>
@@ -27,12 +27,12 @@
                                    name="instagram" value="{{ company.instagram }}"/>
                         </div>
                     </div>
-                    <div class="col-xs-offset-1 col-xs-10">
+                    <div class="col-xs-offset-1 col-xs-10  col-sm-5">
                         <div class="form-group">
                             <label for="concept"><span
                                         class="title_admin_comp">Concept :</span></label>
                             <textarea class="form-control" id="concept"
-                                      name="concept" rows="8">{{ company.concept }}</textarea>
+                                      name="concept">{{ company.concept }}</textarea>
                         </div>
                     </div>
                     <div class="col-xs-offset-1 col-xs-10">
@@ -40,7 +40,7 @@
                             <label for="mentions_legales"><span
                                         class="title_admin_comp">Mentions legales :</span></label>
                             <textarea class="form-control" id="mentions_legales"
-                                      name="mentions_legales" rows="14">{{ company.mentions_legales }}</textarea>
+                                      name="mentions_legales">{{ company.mentions_legales }}</textarea>
                         </div>
                     </div>
                     <div class="col-xs-12 text-center">

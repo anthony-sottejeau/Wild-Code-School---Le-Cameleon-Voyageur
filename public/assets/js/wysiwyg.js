@@ -17,12 +17,14 @@ $(document).ready(function () {
             ['fontsize', ['fontsize']],
             ['color', ['color']],
             ['paragraph', ['paragraph']]
-        ]
+        ],
+
     });
 });
+
+
 $(document).ready(function () {
     $('#concept').summernote({
-
         toolbar: [
             // [groupName, [list of button]]
             ['style', ['bold', 'italic', 'underline', 'clear']],
