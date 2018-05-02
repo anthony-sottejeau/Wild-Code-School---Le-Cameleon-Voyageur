@@ -27,15 +27,16 @@ $(document).ready(function ($) {
 $('.coordinates-generator').click(function () {
     id = $(this).attr('id');
     adress = $('#' + id.substr(0, id.lastIndexOf('-')) + '-adress').val();
+    const day = $('#' + id.substr(0, id.lastIndexOf('-')));
     $.ajax({
         url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + adress + "&key=AIzaSyAtSWBbWkrbinIGgux1wLfeAVIAZxLYKHw",
     }).success(function (data) {
         if (data.results.length > 1) {
-            $('#' + id.substr(0, id.lastIndexOf('-')) + '-coord').val('');
-            $('#' + id.substr(0, id.lastIndexOf('-')) + '-message').html("L'adresse entrée n'est pas assez précise.");
+            $(`${day.selector}-coord`).val('');
+            $(`${day.selector}-message`).html("L'adresse entrée n'est pas assez précise.");
         } else {
-            $('#' + id.substr(0, id.lastIndexOf('-')) + '-message').html("");
-            $('#' + id.substr(0, id.lastIndexOf('-')) + '-coord').val(data.results[0].geometry.location.lat + ',' + data.results[0].geometry.location.lng);
+            $(`${day.selector}-message`).html("");
+            $(`${day.selector}-coord`).val(data.results[0].geometry.location.lat + ',' + data.results[0].geometry.location.lng);
         }
     });
 });
