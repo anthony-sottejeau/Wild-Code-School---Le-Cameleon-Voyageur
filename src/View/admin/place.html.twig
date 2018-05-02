@@ -17,13 +17,7 @@
                         {% for place in places %}
                             <div id="tab-{{ place.day }}"
                                  class="tab-pane fade {% if loop.first %} in active {% endif %}">
-                                <div class="row day">
-                                    <div class="col-xs-12">
-                                        <h3>
-                                            {{ place.day }}
-                                        </h3>
-                                    </div>
-                                </div>
+                               
 
                                 <form action="/admin/place/edit" method="POST">
                                     <input type="hidden" name="id" value="{{ place.id }}"/>
