@@ -20,17 +20,17 @@ class GalleryAdminController extends AbstractController
         $pictureManager = new PictureManager();
         $pictures = $pictureManager->selectAll();
         return $this->twig->render('admin/gallery.html.twig',
-            ['pictures'=>$pictures, 'notification' => $notification]);
+            ['pictures' => $pictures, 'notification' => $notification]);
     }
 
     public function insert()
     {
-        if(isset($_POST['submit'])) {
+        if (isset($_POST['submit'])) {
             $pictureManager = new PictureManager();
             $upload = new Upload('upload/gallery');
             $path = $upload->add($_FILES['file']);
-            if($path) {
-                $pictureManager->insert(['path'=>$path, 'alt'=>$_POST['alt']]);
+            if ($path) {
+                $pictureManager->insert(['path' => $path, 'alt' => $_POST['alt']]);
             }
         }
         header('Location:/admin/gallery');
@@ -39,7 +39,7 @@ class GalleryAdminController extends AbstractController
 
     public function delete()
     {
-        if(isset($_POST['id'])) {
+        if (isset($_POST['id'])) {
             $pictureManager = new PictureManager();
             $upload = new Upload('upload/gallery');
             $upload->delete(($pictureManager->selectOneById($_POST['id']))->getPath());
