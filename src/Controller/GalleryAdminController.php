@@ -27,7 +27,7 @@ class GalleryAdminController extends AbstractController
     {
         if(isset($_POST['submit'])) {
             $pictureManager = new PictureManager();
-            $upload = new Upload('gallery');
+            $upload = new Upload('upload/gallery');
             $path = $upload->add($_FILES['file']);
             if($path) {
                 $pictureManager->insert(['path'=>$path, 'alt'=>$_POST['alt']]);
@@ -41,7 +41,7 @@ class GalleryAdminController extends AbstractController
     {
         if(isset($_POST['id'])) {
             $pictureManager = new PictureManager();
-            $upload = new Upload('gallery');
+            $upload = new Upload('upload/gallery');
             $upload->delete(($pictureManager->selectOneById($_POST['id']))->getPath());
             $pictureManager->delete($_POST['id']);
             header('Location:/admin/gallery');
