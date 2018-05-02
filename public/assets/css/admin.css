@@ -1,7 +1,59 @@
+
+
 section {
     margin: 0;
     padding: 0;
 }
+
+input {
+    font-size: 0.7em;
+}
+
+label {
+    font-size: 0.7em;
+}
+
+th {
+    font-size: 0.7em;
+}
+
+td p {
+    font-size: 0.7em;
+}
+
+.panel-theme {
+    border-color: #aed135;
+}
+
+.panel-theme>.panel-heading {
+    background-color: #aed135;
+    border-color: #aed135;
+    color: white;
+}
+
+/*header*/
+
+input #alert.form-control {
+    min-width: 100%;
+}
+
+.header-admin button {
+    margin: auto;
+    padding: auto;
+}
+
+.header-admin img {
+    height: 50px;
+    width: 80px;
+    object-fit: cover;
+}
+
+.header-admin .description {
+    min-width: 80%;
+    width: 100%;
+}
+
+/*gallery*/
 
 .gallery-admin img {
     height: 50px;
@@ -27,9 +79,6 @@ section {
 
 .gallery-admin .description {
     min-width: 80%;
-}
-
-.gallery-admin .description {
     width: 100%;
 }
 
@@ -41,14 +90,4 @@ section {
     .form-control {
         height: inherit;
     }
-}
-
-.panel-theme {
-    border-color: #aed135;
-}
-
-.panel-theme>.panel-heading {
-    background-color: #aed135;
-    border-color: #aed135;
-    color: white;
 }
