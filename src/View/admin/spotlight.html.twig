@@ -7,22 +7,25 @@
                     <div class="panel-heading">En lumière</div>
                     <div class="panel-body">
 
-                        <form action="/admin/editspotlight" class="form-group" method="POST" enctype="multipart/form-data">
+                        <form action="/admin/editspotlight" class="form-group" method="POST"
+                              enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-xs-6">
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <label for="file">Image : </label>
-                                            <input type="file" class="form-control" name="photo" id="photo" placeholder="">
+                                            <input type="file" class="form-control" name="photo" id="photo"
+                                                   placeholder="">
                                         </div>
                                         <div class="col-xs-12">
                                             <label for="alt">Description de l'image :</label>
-                                            <input type="text" class="form-control" name="alt" value="{{ spotlight.alt }}">
+                                            <input type="text" class="form-control" name="alt"
+                                                   value="{{ spotlight.alt }}">
                                         </div>
                                         <div class="col-xs-12">
-                                                <a class="thumbnail">
-                                                    <img src="/{{ spotlight.photo }}" alt="{{ spotlight.alt }}">
-                                                </a>
+                                            <a class="thumbnail">
+                                                <img src="/{{ spotlight.photo }}" alt="{{ spotlight.alt }}">
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -40,7 +43,7 @@
                                 </div>
                             </div>
                         </form>
-                </div>
+                    </div>
                 </div>
             </div>
         </section>
