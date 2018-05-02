@@ -6,7 +6,7 @@ footer {
 
 .icons {
     padding-right: 0;
-    padding-left:  0;
+    padding-left: 0;
     margin-top: 16rem;
     text-align: center;
 }
@@ -19,9 +19,11 @@ footer {
 .phone p{
     text-align: center;
 }
+
 footer ul {
     margin-top: 8.5rem;
 }
+
 footer p {
     color: #343232;
 
@@ -31,14 +33,16 @@ footer p {
     font-size: 2rem;
     line-height: 200%;
 }
-.listlink>ul>li>a:hover {
-    color: #728e20;
+
+.listlink > ul > li > a:hover {
+    color: #E72;
     text-decoration: none;
 }
+
 .face {
     float: right;
-    padding: 3vh 0;
-    text-align: center;
+    margin-top: 20px;
+    text-align: right;
     max-height: 20%;
 }
 
@@ -46,6 +50,7 @@ footer p {
     .list-inline img {
         width: 26px;
         height: 26px;
+
     }
     .listlink a{
         font-size: 1em;
@@ -53,14 +58,30 @@ footer p {
     .phone p{
         font-size: 1rem;
         }
-    footer {
-        height: 38vh;
-    }
-
     footer ul {
         margin: 2rem;
     }
     .icons {
         margin: 2rem;
     }
+
+    .listlink a {
+        font-size: 1em;
+    }
+
+    .phone p {
+        font-size: 1rem;
+    }
+
+    footer {
+        height: 100px;
+    }
+}
+
+.link_mentions {
+    color: #E72;
+}
+
+.link_mentions:hover {
+    color:  #E72
 }
