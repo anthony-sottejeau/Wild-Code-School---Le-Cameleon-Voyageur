@@ -28,21 +28,20 @@
     text-align: center;
     font-family: nexa;
     color: #ee7722;
-    font-size: 4.2rem;
-    background-image: url("../images/banderole2.png");
+    font-size: 4.5rem;
+    background-image: url("../images/banderole3.png");
     background-position: center top;
     background-size: contain;
     background-repeat: no-repeat;
     height: 150px;
-    padding-top: 50px;
-    transform: rotate(7deg);
-    margin-top: 0;
-    margin-bottom: 5vh;
+    padding-top: 90px;
+    margin-top: -20px;
+    margin-bottom: 60px;
+
 }
 @media screen and (max-width: 500px) {
     .gallery-page h2 {
         background-image: unset;
-        transform: rotate(0deg);
         height: 50px;
         padding-top: unset;
     }
