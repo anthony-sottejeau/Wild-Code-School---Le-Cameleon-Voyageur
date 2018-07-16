@@ -37,8 +37,8 @@ Le site a:
 Equipe:
 -------
 
-Mahmoud 
-Jaugin Brice
-Louis Roy
-Sedira Damien
-Sottejeau Anthony
+- Mahmoud Alabed
+- Jaugin Brice
+- Louis Roy
+- Sedira Damien
+- Sottejeau Anthony
